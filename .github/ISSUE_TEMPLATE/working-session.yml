@@ -1,18 +1,17 @@
-name: 💼 Working Session
-description: Plan and track co-design working sessions (WS1, WS2, WS3)
-title: '[WS] [Project Name] - [Session Type] Working Session'
-labels: ['working-session', 'co-design', 'collaboration']
+name: 📢 Stakeholder Feedback Collection
+description: Systematically collect and track stakeholder feedback
+title: '[FEEDBACK] [Project Name] - [Feedback Topic]'
+labels: ['feedback', 'stakeholder-input', 'agency-response']
 assignees:
   - co-design-lead
-  - sep-team
 body:
   - type: markdown
     attributes:
       value: |
-        ## 💼 Working Session Template
+        ## 📢 Stakeholder Feedback Collection Template
         
-        Use this template to plan and track co-design working sessions including CoDesign 101, 
-        Stakeholder Review & Worksheet sessions, and Requirements Verification sessions.
+        Use this template to systematically collect, track, and analyze stakeholder feedback 
+        throughout the co-design process.
         
   - type: input
     id: project_name
@@ -23,323 +22,375 @@ body:
     validations:
       required: true
       
-  - type: dropdown
-    id: session_type
+  - type: input
+    id: feedback_topic
     attributes:
-      label: Session Type
-      description: Select the type of working session
-      options:
-        - CoDesign 101
-        - Stakeholder Review & Worksheet
-        - Requirements Verification
-        - Solution Planning Workshop
-        - Technical Review Session
-        - Implementation Planning
-        - Other
+      label: Feedback Topic
+      description: Specific area or component requesting feedback on
+      placeholder: e.g., User Interface Design, Data Format Requirements, Workflow Integration
     validations:
       required: true
       
   - type: dropdown
-    id: session_number
+    id: collection_method
     attributes:
-      label: Session Number
-      description: If part of a series, indicate which session
+      label: Collection Method
+      description: How will feedback be collected?
       options:
-        - WS1
-        - WS2
-        - WS3
-        - Single Session
+        - Survey
+        - Interview
+        - Working Session
+        - Email
+        - Focus Group
+        - Demo Feedback Session
+        - Online Form
         - Other
-        
-  - type: input
-    id: session_date
-    attributes:
-      label: Session Date
-      description: Date of the working session
-      placeholder: e.g., March 20, 2025
     validations:
       required: true
       
   - type: input
-    id: session_duration
+    id: target_date
     attributes:
-      label: Session Duration
-      description: Expected duration of the session
-      placeholder: e.g., 2 hours, 90 minutes
+      label: Target Date
+      description: When feedback is needed by
+      placeholder: e.g., April 30, 2025
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current Status
+      description: Current status of feedback collection
+      options:
+        - Planning
+        - Active Collection
+        - Analysis
+        - Complete
     validations:
       required: true
       
   - type: textarea
-    id: session_purpose
+    id: primary_questions
     attributes:
-      label: Primary Purpose
-      description: Clear statement of what this working session aims to accomplish
+      label: Primary Questions
+      description: Key questions that directly impact solution decisions
       placeholder: |
-        This working session will establish the co-design framework for the project, 
-        identify the co-design lead, and develop the stakeholder engagement strategy 
-        for integration into the project plan.
+        - How well does the current user interface support your daily workflow?
+        - What data formats are most critical for your operational decisions?
+        - What would prevent adoption of this solution in your agency?
+        - How does this compare to your current tools and processes?
       render: markdown
     validations:
       required: true
       
   - type: textarea
-    id: expected_outcomes
+    id: decision_impact
     attributes:
-      label: Expected Outcomes
-      description: Specific outcomes expected from this session
+      label: Decision Impact
+      description: How this feedback will be used to make specific decisions
       placeholder: |
-        - Designated co-design lead identified and confirmed
-        - Stakeholder engagement timeline developed
-        - Co-design strategy integrated into SEP section of project plan
-        - Communication protocols established
+        This feedback will inform:
+        - Final user interface design decisions
+        - Data export format prioritization
+        - Training material development focus
+        - Implementation timeline adjustments
+      render: markdown
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: urgency_level
+    attributes:
+      label: Urgency Level
+      description: How urgent is this feedback collection?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+      
+  - type: textarea
+    id: urgency_rationale
+    attributes:
+      label: Urgency Rationale
+      description: Why this feedback is needed and why now
+      placeholder: |
+        This feedback is urgent because:
+        - Development decisions must be made by [date]
+        - Stakeholder availability window is limited
+        - Critical path dependency for project timeline
       render: markdown
     validations:
       required: true
       
   - type: textarea
-    id: success_criteria
+    id: target_stakeholders
     attributes:
-      label: Success Criteria
-      description: How you'll know this session was successful
+      label: Target Stakeholders
+      description: List primary and secondary respondents with rationale
       placeholder: |
-        - All participants understand their roles in the co-design process
-        - Clear timeline established with specific milestones
-        - Stakeholder engagement strategy approved by all team members
-        - Next steps clearly defined and assigned
+        **Primary Respondents:**
+        - USDA Forest Service - Jane Smith - GIS Analyst - Critical for workflow integration
+        - EPA Region 4 - John Doe - Data Manager - Key user of export functions
+        
+        **Secondary Respondents:**
+        - NOAA - Mary Wilson - Research Scientist - Nice to have perspective
+        - USGS - Bob Johnson - IT Specialist - Technical implementation insight
       render: markdown
     validations:
       required: true
-      
-  - type: textarea
-    id: internal_participants
-    attributes:
-      label: Internal Team Participants
-      description: List internal team members and their roles in the session
-      placeholder: |
-        - Jane Smith - Project Lead - Overall project coordination
-        - John Doe - Technical Lead - Solution architecture input
-        - Mary Johnson - Data Specialist - Requirements clarification
-      render: markdown
-    validations:
-      required: true
-      
-  - type: textarea
-    id: sep_participants
-    attributes:
-      label: SEP Team Participants
-      description: List SEP team members and their responsibilities
-      placeholder: |
-        - SEP Deputy - Stakeholder engagement strategy guidance
-        - CoDesign Lead - Methodology and best practices
-        - Project Coordinator - Process facilitation
-      render: markdown
-    validations:
-      required: true
-      
-  - type: textarea
-    id: agency_participants
-    attributes:
-      label: Agency Stakeholders (if applicable)
-      description: List any agency stakeholders participating
-      placeholder: |
-        - Agency Name - Contact Name - Role
-        - USDA Forest Service - Jane Wilson - GIS Coordinator
-      render: markdown
       
   - type: input
-    id: total_participants
+    id: target_response_rate
     attributes:
-      label: Total Expected Participants
-      description: Total number of people expected in the session
-      placeholder: e.g., 8-10 participants
+      label: Target Response Rate
+      description: Expected response rate and minimum viable responses
+      placeholder: e.g., 8 out of 12 stakeholders (67%), minimum 6 responses needed
     validations:
       required: true
       
-  - type: checkboxes
-    id: preparation_checklist
-    attributes:
-      label: Pre-Session Preparation Checklist
-      description: Check items as they are completed
-      options:
-        - label: Session agenda prepared with detailed timing
-        - label: Background materials compiled for participants
-        - label: Stakeholder worksheet prepared (if applicable)
-        - label: GitHub repository setup (if applicable)
-        - label: Assessment information compiled
-        - label: Reference materials and templates gathered
-        - label: Meeting platform tested (Zoom/Teams/Other)
-        - label: Screen sharing and recording capabilities verified
-        - label: Collaborative tools prepared (Miro/GitHub/Other)
-        - label: Invitations sent with agenda
-        - label: Background materials distributed to participants
-        - label: Technical requirements communicated
-        
   - type: textarea
-    id: session_agenda
+    id: collection_plan
     attributes:
-      label: Detailed Session Agenda
-      description: Outline the session flow with specific time allocations
+      label: Detailed Collection Plan
+      description: Specific details about how feedback will be collected
       placeholder: |
-        **Total Duration:** 2 hours
+        **Method:** Online survey followed by optional 30-minute interviews
         
-        **Opening (15 minutes)**
-        - Welcome and introductions (5 min)
-        - Session objectives and agenda overview (5 min)
-        - Ground rules and expectations (5 min)
-
-        **Main Working Session (90 minutes)**
-        - Co-design methodology overview (20 min)
-        - Stakeholder mapping exercise (25 min)
-        - Break (10 min)
-        - Timeline development workshop (25 min)
-        - Action planning (10 min)
-
-        **Wrap-up (15 minutes)**
-        - Summary of accomplishments (5 min)
-        - Action items assignment (5 min)
-        - Next steps confirmation (5 min)
+        **Survey Distribution:**
+        - Personalized email invitations with project context
+        - 2-week response window
+        - Reminder emails at 1 week and 3 days before deadline
+        
+        **Interview Follow-up:**
+        - Optional 30-minute calls for detailed discussion
+        - Scheduled based on survey responses indicating interest
+        - Focus on clarifying complex feedback
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Collection Timeline
+      description: Detailed timeline for feedback collection process
+      placeholder: |
+        - **Preparation Complete:** March 15, 2025
+        - **Feedback Collection Starts:** March 20, 2025
+        - **Reminder Sent:** March 27, 2025
+        - **Collection Ends:** April 3, 2025
+        - **Analysis Complete:** April 10, 2025
+        - **Results Shared:** April 15, 2025
       render: markdown
     validations:
       required: true
       
   - type: checkboxes
-    id: codesign_101_activities
+    id: materials_needed
     attributes:
-      label: CoDesign 101 Session Activities (if applicable)
-      description: Check activities planned for CoDesign 101 sessions
+      label: Materials Needed Checklist
+      description: Check materials as they are prepared
       options:
-        - label: Identify solution project team co-design lead
-        - label: Review co-design principles and methodology
-        - label: Discuss stakeholder engagement strategy
-        - label: Plan integration with SEP section of project plan
-        - label: Establish communication protocols
-        - label: Review SNWG co-design best practices
-        
-  - type: checkboxes
-    id: stakeholder_review_activities
-    attributes:
-      label: Stakeholder Review & Worksheet Activities (if applicable)
-      description: Check activities for stakeholder review sessions
-      options:
-        - label: Complete GitHub repository with assessment info
-        - label: Work through stakeholder worksheet systematically
-        - label: Finalize co-design strategy with timeline
-        - label: Identify key decision points requiring stakeholder input
-        - label: Plan upcoming touchpoints
-        - label: Update stakeholder contact information
-        
-  - type: checkboxes
-    id: requirements_verification_activities
-    attributes:
-      label: Requirements Verification Activities (if applicable)
-      description: Check activities for requirements verification sessions
-      options:
-        - label: Review and validate current requirements understanding
-        - label: Complete worksheet with solution implementation teams
-        - label: Define success criteria with stakeholders
-        - label: Identify gaps in current understanding
-        - label: Plan additional verification activities
-        - label: Document requirements changes or updates
+        - label: Feedback survey/interview questions developed
+        - label: Background materials for stakeholders prepared
+        - label: Demo or prototype ready (if applicable)
+        - label: Context document explaining current solution state
+        - label: Survey platform configured and tested
+        - label: Interview scheduling system set up
+        - label: Data collection and analysis plan ready
         
   - type: textarea
-    id: discussion_topics
+    id: survey_questions
     attributes:
-      label: Key Discussion Topics
-      description: Required and optional discussion points for the session
+      label: Survey Questions (if applicable)
+      description: List specific survey questions with response formats
       placeholder: |
-        **Required Discussion Points:**
-        - Stakeholder engagement timeline - Decision Needed: Yes - By When: End of session
-        - Co-design lead designation - Decision Needed: Yes - By When: End of session
-        - Communication protocols - Decision Needed: Yes - By When: Next week
-        
-        **Optional Discussion Points:**
-        - Advanced co-design techniques - If Time Allows
-        - Integration with other projects - If Time Allows
-        
-        **Parking Lot Items:**
-        [Items that come up during session but should be addressed separately]
+        1. How well does the current interface support your workflow? (1-5 scale + comments)
+        2. Which data export formats are most important to you? (Multiple choice + other)
+        3. How often would you use this solution? (Daily/Weekly/Monthly/Rarely)
+        4. What barriers might prevent adoption in your agency? (Open text)
+        5. Overall satisfaction with solution approach? (1-5 scale + comments)
       render: markdown
       
   - type: textarea
-    id: outcomes_results
+    id: interview_guide
     attributes:
-      label: Session Outcomes & Results (Complete After Session)
-      description: Document the results after the session is completed
+      label: Interview Guide (if applicable)
+      description: Structure for interviews including key questions
       placeholder: |
-        **Decisions Made:**
-        - Co-design lead designated: [Name] - Impact: [Description]
-        - Stakeholder engagement approach approved - Impact: [Description]
+        **Opening (5 minutes):**
+        - Thank stakeholder for participation
+        - Explain interview purpose and confidentiality
+        - Confirm permission to record/take notes
 
-        **Action Items Generated:**
-        - [ ] Update project plan with co-design strategy - Owner: [Name] - Due: [Date] - Priority: High
-        - [ ] Schedule first stakeholder touchpoint - Owner: [Name] - Due: [Date] - Priority: High
+        **Main Questions (20 minutes):**
+        - Walk me through how you currently handle [relevant task]
+        - How would this solution fit into that workflow?
+        - What concerns do you have about implementation?
+        - What would make this solution more valuable?
 
-        **Key Insights:**
-        - [Insight about stakeholder needs or solution approach]
-        - [Insight about implementation challenges or opportunities]
+        **Closing (5 minutes):**
+        - Any additional thoughts or concerns?
+        - Next steps and timeline communication
+        - Thank you and follow-up process
+      render: markdown
+      
+  - type: textarea
+    id: response_tracking
+    attributes:
+      label: Response Tracking (Update During Collection)
+      description: Track response status for each stakeholder
+      placeholder: |
+        **Response Status:**
+        - [ ] Jane Smith (USDA) - Status: Not contacted | Contacted | Responded | Follow-up needed
+        - [ ] John Doe (EPA) - Status: Not contacted | Contacted | Responded | Follow-up needed
+        - [ ] Mary Wilson (NOAA) - Status: Not contacted | Contacted | Responded | Follow-up needed
 
-        **Documents Updated:**
-        - [ ] Project plan - Changes: [Description]
-        - [ ] Stakeholder worksheet - Changes: [Description]
+        **Response Summary:**
+        - Total stakeholders contacted: [Number]
+        - Responses received: [Number]
+        - Response rate: [Percentage]
+        - Follow-ups needed: [Number]
+      render: markdown
+      
+  - type: textarea
+    id: feedback_analysis
+    attributes:
+      label: Feedback Analysis (Complete After Collection)
+      description: Analyze and summarize collected feedback
+      placeholder: |
+        **Key Themes:**
+        - **Theme 1:** Interface simplicity concerns - **Frequency:** 6 out of 8 respondents
+        - **Theme 2:** Data format flexibility needs - **Frequency:** 5 out of 8 respondents
+        - **Theme 3:** Training requirements - **Frequency:** 4 out of 8 respondents
+
+        **Positive Feedback:**
+        - Strong support for real-time data access capability
+        - Appreciation for stakeholder engagement process
+        - Enthusiasm for workflow integration potential
+
+        **Concerns & Issues:**
+        - Learning curve for new interface
+        - Integration with legacy systems
+        - Bandwidth limitations for data downloads
+
+        **Suggestions for Improvement:**
+        - Simplified navigation options
+        - Multiple export format support
+        - Offline capability for remote areas
+
+        **Conflicting Feedback:**
+        - Some prefer detailed interface, others want simplified version
+        - Resolution approach: Offer customizable dashboard views
+      render: markdown
+      
+  - type: textarea
+    id: action_items
+    attributes:
+      label: Action Items from Feedback
+      description: Categorize actions based on feedback received
+      placeholder: |
+        **High Priority Actions:**
+        - [ ] Implement simplified navigation option - Rationale: 75% of users requested - Owner: [Name] - Due: [Date]
+        - [ ] Add CSV export format - Rationale: Critical for 3 major agencies - Owner: [Name] - Due: [Date]
+
+        **Medium Priority Actions:**
+        - [ ] Develop advanced user training materials - Owner: [Name] - Due: [Date]
+        - [ ] Research offline capability options - Owner: [Name] - Due: [Date]
+
+        **Future Consideration:**
+        - Mobile app development (mentioned by 2 users, not current priority)
+        - Advanced analytics features (interesting but beyond current scope)
+
+        **No Action Required:**
+        - Request for historical data back to 1980 (noted but outside project scope)
+        - Rationale: Would require significant additional resources and scope change
       render: markdown
       
   - type: checkboxes
-    id: followup_actions
+    id: communication_results
     attributes:
-      label: Follow-up Actions Checklist
-      description: Track follow-up activities after the session
+      label: Communication of Results Checklist
+      description: Track communication of feedback results to stakeholders
       options:
-        - label: Session summary sent to all participants (within 48 hours)
-        - label: GitHub repository updated with outcomes
-        - label: Updated documents distributed
-        - label: Follow-up meetings scheduled if needed
-        - label: Action items assigned to session facilitator completed
-        - label: Participant action items followed up on
-        - label: Project timeline updated based on session outcomes
-        - label: Materials prepared for next session/touchpoint
+        - label: Thank you message sent to all respondents
+        - label: Summary of feedback themes shared with stakeholders
+        - label: Explanation of how feedback will be used provided
+        - label: Timeline for implementation of changes shared
+        - label: Results presented to solution development team
+        - label: Feedback integrated into project planning
+        - label: SEP team briefed on outcomes
+        - label: Project documentation updated
         
   - type: textarea
-    id: session_evaluation
+    id: impact_assessment
     attributes:
-      label: Session Evaluation
-      description: Assess the effectiveness of the session
+      label: Impact Assessment
+      description: Evaluate how feedback affected the solution and project
       placeholder: |
-        **Participant Feedback:**
-        - Session usefulness: [To be collected via survey]
-        - Agenda appropriateness: [Feedback on timing and content]
-        - Facilitation quality: [Assessment of session leadership]
-        - Outcome achievement: [Did we meet our objectives?]
+        **Solution Changes Made:**
+        - Added simplified dashboard view - Rationale: Based on 6 user requests for easier navigation
+        - Implemented CSV and GeoJSON export - Rationale: Critical for agency workflows
 
-        **Facilitator Assessment:**
-        - Objectives met: Yes/No/Partially
-        - Time management: Effective/Needs improvement
-        - Participation level: High/Medium/Low
-        - Technical issues: None/Minor/Major
+        **Timeline Impact:**
+        - Original timeline: Beta release April 30
+        - Revised timeline: Beta release May 15
+        - **Reason:** Additional 2 weeks needed for export format implementation
 
-        **Improvements for Next Time:**
-        - [What worked well that should be repeated]
-        - [What could be improved for future sessions]
+        **Resource Impact:**
+        - Additional development effort: 40 hours
+        - Additional testing required: 16 hours
+        - **Justification:** Changes address critical user needs and improve adoption likelihood
+
+        **Stakeholder Satisfaction:**
+        - Follow-up survey shows 90% satisfaction with feedback incorporation
+        - Increased enthusiasm for solution testing and implementation
+      render: markdown
+      
+  - type: textarea
+    id: lessons_learned
+    attributes:
+      label: Lessons Learned
+      description: Document what worked well and what could be improved
+      placeholder: |
+        **What Worked Well:**
+        - Personalized email approach achieved 80% response rate
+        - Combination of survey + optional interviews provided depth and breadth
+        - Clear timeline and expectations set good participation framework
+
+        **What Could Be Improved:**
+        - Earlier engagement would have caught some issues sooner
+        - More technical stakeholders needed for implementation feedback
+        - Better coordination with agency schedules for timing
+
+        **Recommendations for Future Feedback Collection:**
+        - Start feedback collection 1 month earlier in development cycle
+        - Include IT/technical staff in addition to end users
+        - Use agency-preferred communication channels when possible
+        - Provide multiple response options (phone, email, web form)
       render: markdown
       
   - type: textarea
     id: resources_links
     attributes:
       label: Resources & Links
-      description: Links to session materials, outputs, and related issues
+      description: Links to collection materials, results, and related issues
       placeholder: |
-        **Session Materials:**
-        - [Link to agenda]
-        - [Link to presentation slides]
-        - [Link to collaborative workspace (Miro, etc.)]
+        **Collection Materials:**
+        - [Link to survey instrument]
+        - [Link to interview guide]
+        - [Link to background materials sent to stakeholders]
 
-        **Outputs:**
-        - [Link to session recording]
-        - [Link to detailed notes]
-        - [Link to completed worksheets]
-        - [Link to updated GitHub repository]
+        **Results:**
+        - [Link to raw feedback data]
+        - [Link to analysis summary]
+        - [Link to stakeholder communication]
 
         **Related Issues:**
-        - Supports #[touchpoint-issue-number]
-        - Leads to #[next-milestone-number]
-        - Related to #[other-working-session-number]
+        - Supports #[milestone-or-touchpoint-number]
+        - Informs #[future-decision-number]
+        - Related to #[other-feedback-collection]
       render: markdown
