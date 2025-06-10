@@ -1,0 +1,167 @@
+name: 🚀 Setup Co-Design Project Board
+on:
+  workflow_dispatch:
+    inputs:
+      solution_name:
+        description: 'Solution name (e.g., HLS-LL)'
+        required: true
+        type: string
+      project_phase:
+        description: 'Current project phase'
+        required: true
+        type: choice
+        options:
+          - 'Pre-Formulation'
+          - 'Formulation' 
+          - 'Implementation'
+          - 'Operations'
+
+jobs:
+  setup-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Create Co-Design Project Board
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Create project board
+            const projectName = `${{ github.event.inputs.solution_name }} Co-Design Pipeline`;
+            
+            // Note: This uses GitHub Projects API v2
+            const project = await github.rest.projects.createForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: projectName,
+              body: `Co-design tracking for ${{ github.event.inputs.solution_name }} solution project`
+            });
+            
+            console.log(`Created project: ${project.data.html_url}`);
+            
+            // Create columns
+            const columns = [
+              { name: '📋 Stakeholder Identification', purpose: 'Identify and map stakeholders' },
+              { name: '📝 Touchpoint Planning', purpose: 'Plan touchpoints and working sessions' },
+              { name: '🤝 Active Engagement', purpose: 'Execute touchpoints and communications' },
+              { name: '💬 Feedback Integration', purpose: 'Process stakeholder feedback' },
+              { name: '✅ Documentation Complete', purpose: 'Completed activities' }
+            ];
+            
+            for (const column of columns) {
+              await github.rest.projects.createColumn({
+                project_id: project.data.id,
+                name: column.name
+              });
+              console.log(`Created column: ${column.name}`);
+            }
+            
+            // Create initial issues
+            const initialIssues = [
+              {
+                title: `[SETUP] Stakeholder Identification and Mapping`,
+                body: `## Stakeholder Identification for ${{ github.event.inputs.solution_name }}
+                
+Use this issue to identify and map stakeholders for your co-design process.
+
+### Tasks:
+- [ ] Review assessment interview participants
+- [ ] Research additional potential stakeholders  
+- [ ] Complete stakeholder mapping template
+- [ ] Prioritize stakeholders by engagement level
+- [ ] Update stakeholder contact information
+
+### Resources:
+- Stakeholder Map Template: /stakeholders/STAKEHOLDER-MAP.md
+- Assessment Data: [Link to assessment documents]
+- Touchpoint Reference: /docs/TOUCHPOINT-REFERENCE.md
+
+### Next Steps:
+After completing stakeholder mapping, create your first touchpoint planning issue.`,
+                labels: ['stakeholder-mapping', 'setup', 'high-priority']
+              },
+              {
+                title: `[TOUCHPOINT] TP1: Solution Introduction - ${{ github.event.inputs.solution_name }}`,
+                body: `## Touchpoint 1: Solution Introduction
+                
+**Target Date:** [Set based on project timeline]
+**Phase:** ${{ github.event.inputs.project_phase }}
+
+### Objectives:
+- Introduce ${{ github.event.inputs.solution_name }} solution to assessment stakeholders
+- Invite stakeholders to participate in co-design
+- Assess initial interest and availability
+- Identify champions and technical contacts
+
+### Preparation Needed:
+- [ ] Review assessment interview notes
+- [ ] Prepare solution summary (1-2 pages)
+- [ ] Update stakeholder contact information
+- [ ] Customize email template
+- [ ] Coordinate with SEP team
+
+### Templates to Use:
+- Email: /templates/communications/touchpoint-emails/touchpoint-1-introduction.md
+- Solution Overview: /templates/presentations/solution-overview.md
+
+### Success Criteria:
+- [ ] 70%+ stakeholder response rate
+- [ ] 3-5 stakeholders express co-design interest
+- [ ] Key contacts and champions identified
+- [ ] No major objections to solution approach
+
+**Next:** Plan Working Session 1 based on stakeholder responses.`,
+                labels: ['touchpoint', 'planning', 'touchpoint-1']
+              }
+            ];
+            
+            for (const issue of initialIssues) {
+              const createdIssue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issue.title,
+                body: issue.body,
+                labels: issue.labels
+              });
+              console.log(`Created issue: ${createdIssue.data.title}`);
+            }
+            
+            // Create summary comment
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🎉 Co-Design Setup Complete for ${{ github.event.inputs.solution_name }}`,
+              body: `## Setup Complete! 
+              
+Your co-design project board and initial issues have been created.
+
+### What was created:
+- ✅ Project board: "${projectName}"
+- ✅ 5 organized columns for co-design pipeline
+- ✅ Initial stakeholder mapping issue
+- ✅ Touchpoint 1 planning issue
+
+### Next Steps:
+1. **Visit your project board** to see the visual pipeline
+2. **Complete stakeholder mapping** using the created issue
+3. **Plan Touchpoint 1** based on your project timeline
+4. **Review documentation** in /docs/ folder
+
+### Resources:
+- Project Board Setup Guide: /docs/PROJECT-BOARD-SETUP.md  
+- Touchpoint Reference: /docs/TOUCHPOINT-REFERENCE.md
+- Co-Design Guide: /docs/CODESIGN-GUIDE.md
+
+**Need help?** Contact the SEP Co-Design team or check the documentation.
+
+---
+*This setup was automated. You can manually create additional issues using the templates in .github/ISSUE_TEMPLATES/*`,
+              labels: ['setup-complete', 'information']
+            });
+            
+            // Output project URL for easy access
+            console.log(`\n🎉 Setup complete!`);
+            console.log(`Project URL: ${project.data.html_url}`);
+            console.log(`Repository: https://github.com/${context.repo.owner}/${context.repo.repo}`);
