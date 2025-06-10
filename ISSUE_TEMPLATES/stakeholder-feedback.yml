@@ -1,0 +1,105 @@
+# .github/ISSUE_TEMPLATES/stakeholder-feedback.yml
+
+name: 💬 Stakeholder Feedback
+description: Capture and track feedback from stakeholders
+title: "[FEEDBACK] [Stakeholder/Agency]: [Brief Description]"
+labels: ["stakeholder-feedback", "input", "tracking"]
+projects: ["Co-Design Pipeline"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## About Stakeholder Feedback
+        
+        Use this template to capture, track, and respond to feedback from stakeholders throughout your co-design process. This ensures all stakeholder input is documented and properly addressed.
+        
+        **📋 Tip:** Create one issue per stakeholder per major feedback session for better tracking.
+
+  - type: input
+    id: stakeholder_name
+    attributes:
+      label: "Stakeholder Name & Agency"
+      description: "Who provided this feedback?"
+      placeholder: "e.g., Chris Cole (DOI/Bureau of Land Management)"
+    validations:
+      required: true
+
+  - type: input
+    id: feedback_date
+    attributes:
+      label: "Date Received"
+      description: "When was this feedback provided?"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback_source
+    attributes:
+      label: "Feedback Source"
+      description: "How was this feedback provided?"
+      options:
+        - "Touchpoint Meeting (1:1 or group)"
+        - "Email Communication"
+        - "Survey Response"
+        - "Working Session"
+        - "Phone/Video Call"
+        - "Assessment Interview Follow-up"
+        - "Informal Discussion"
+        - "Written Document/Report"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: related_touchpoint
+    attributes:
+      label: "Related Touchpoint"
+      description: "Which touchpoint or activity generated this feedback?"
+      options:
+        - "Touchpoint 1: Solution Introduction"
+        - "Touchpoint 2: Agency Feedback Survey"
+        - "Touchpoint 3: Solution Validation"
+        - "Touchpoint 4: Outreach and Screening"
+        - "Touchpoint 5: Requirements Gathering"
+        - "Touchpoint 6: Iterative Co-Design"
+        - "Touchpoint 7: Solution Launch & Training"
+        - "Touchpoint 8: Transition/Closeout"
+        - "Working Session 1"
+        - "Working Session 2"
+        - "Working Session 3"
+        - "General Communication"
+        - "Other"
+
+  - type: checkboxes
+    id: feedback_category
+    attributes:
+      label: "Feedback Categories"
+      description: "What topics does this feedback address? (Check all that apply)"
+      options:
+        - label: "Technical Requirements (data formats, resolution, etc.)"
+        - label: "User Experience/Interface Design"
+        - label: "Implementation Approach"
+        - label: "Feature Requests or Modifications"
+        - label: "Timeline or Schedule Concerns"
+        - label: "Budget or Resource Constraints"
+        - label: "Agency Workflow Integration"
+        - label: "Training or Support Needs"
+        - label: "Data Access or Delivery Preferences"
+        - label: "Operational Constraints"
+        - label: "Process or Communication Feedback"
+        - label: "Satisfaction or Concerns with Co-Design Process"
+
+  - type: textarea
+    id: feedback_content
+    attributes:
+      label: "Detailed Feedback Content"
+      description: "What was the specific feedback provided? Be as detailed as possible."
+      placeholder: |
+        **Summary:** Brief overview of the feedback
+        
+        **Specific Comments:**
+        - Point 1: [detailed description]
+        - Point 2: [detailed description]
+        
+        **Stakeholder Suggestions
