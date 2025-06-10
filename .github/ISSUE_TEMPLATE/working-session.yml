@@ -1,247 +1,345 @@
-# .github/ISSUE_TEMPLATES/working-session.yml
-
-name: 🔧 Working Session Planning
-description: Plan and track Co-Design Working Sessions (WS1, WS2, WS3)
-title: "[WORKING SESSION] WS#: [Session Name] - [Date]"
-labels: ["working-session", "planning", "internal-meeting"]
-projects: ["Co-Design Pipeline"]
-assignees: []
+name: 💼 Working Session
+description: Plan and track co-design working sessions (WS1, WS2, WS3)
+title: '[WS] [Project Name] - [Session Type] Working Session'
+labels: ['working-session', 'co-design', 'collaboration']
+assignees:
+  - co-design-lead
+  - sep-team
 body:
   - type: markdown
     attributes:
       value: |
-        ## About Working Sessions
+        ## 💼 Working Session Template
         
-        Working Sessions are internal meetings with your implementation team, SEP Co-Design Lead, and key project stakeholders to plan and refine your co-design approach. These are different from Touchpoints (which focus on stakeholder engagement).
+        Use this template to plan and track co-design working sessions including CoDesign 101, 
+        Stakeholder Review & Worksheet sessions, and Requirements Verification sessions.
         
-        **📋 Before you start:** Review Working Session agendas in `/docs/WORKING-SESSION-AGENDAS.md` for detailed guidance.
-
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+      description: Name of the solution project
+      placeholder: e.g., HLS-LL Data Access Portal
+    validations:
+      required: true
+      
   - type: dropdown
     id: session_type
     attributes:
-      label: "Working Session Type"
-      description: "Which working session are you planning?"
+      label: Session Type
+      description: Select the type of working session
       options:
-        - "WS1: Co-Design 101 (Months 2-4 Pre-Formulation)"
-        - "WS2: Co-Design Strategy Meeting (Months 4-6 Pre-Formulation)" 
-        - "WS3: Requirements Consolidation (Months 6-8 Pre-Formulation)"
-        - "Custom Working Session"
+        - CoDesign 101
+        - Stakeholder Review & Worksheet
+        - Requirements Verification
+        - Solution Planning Workshop
+        - Technical Review Session
+        - Implementation Planning
+        - Other
     validations:
       required: true
-
-  - type: input
-    id: scheduled_date
-    attributes:
-      label: "Scheduled Date & Time"
-      description: "When will this working session take place?"
-      placeholder: "YYYY-MM-DD HH:MM timezone (e.g., 2025-07-15 14:00 EDT)"
-    validations:
-      required: true
-
-  - type: input
-    id: duration
-    attributes:
-      label: "Estimated Duration"
-      description: "How long will this session take?"
-      placeholder: "e.g., 1.5 hours, 2 hours"
-      value: "1.5 hours"
-
+      
   - type: dropdown
-    id: meeting_format
+    id: session_number
     attributes:
-      label: "Meeting Format"
-      description: "How will this session be conducted?"
+      label: Session Number
+      description: If part of a series, indicate which session
       options:
-        - "Virtual (Zoom/Teams)"
-        - "In-Person"
-        - "Hybrid (some virtual, some in-person)"
-    validations:
-      required: true
-
-  - type: textarea
-    id: participants
-    attributes:
-      label: "Expected Participants"
-      description: "Who will attend this working session?"
-      placeholder: |
-        **Internal Team:**
-        - [Implementation Team Lead]
-        - [Project Scientist]
-        - [Technical Lead]
+        - WS1
+        - WS2
+        - WS3
+        - Single Session
+        - Other
         
-        **SEP Team:**
-        - [SEP Co-Design Lead]
-        - [SEP Project Liaison]
-        
-        **Optional:**
-        - [NASA HQ Program Scientist]
-        - [Key Stakeholder Champions]
-      value: |
-        **Internal Team:**
-        - Implementation Team Lead: 
-        - Project Scientist: 
-        - 
-        
-        **SEP Team:**
-        - SEP Co-Design Lead: 
-        - 
-        
-        **Others:**
-        - 
-
-  - type: textarea
-    id: session_objectives
-    attributes:
-      label: "Session Objectives"
-      description: "What will be accomplished in this session? (Auto-filled based on session type)"
-      placeholder: "Objectives will be populated based on session type selection above"
-
-  - type: textarea
-    id: preparation_materials
-    attributes:
-      label: "Materials to Prepare"
-      description: "What needs to be ready before the session?"
-      placeholder: |
-        - [ ] Session agenda (use template from /docs/WORKING-SESSION-AGENDAS.md)
-        - [ ] Stakeholder mapping worksheet
-        - [ ] Project timeline and milestone template
-        - [ ] Co-design budget estimation spreadsheet
-        - [ ] Current stakeholder list and priorities
-        - [ ] Assessment interview summaries
-        - [ ] Solution project overview/status
-      value: |
-        - [ ] Session agenda (see /docs/WORKING-SESSION-AGENDAS.md)
-        - [ ] 
-        - [ ] 
-        - [ ] 
-
-  - type: textarea
-    id: expected_deliverables
-    attributes:
-      label: "Expected Deliverables"
-      description: "What outputs should this session produce?"
-      placeholder: |
-        - Finalized stakeholder engagement approach
-        - Completed stakeholder mapping and prioritization
-        - Co-design budget impact assessment
-        - Updated project timeline with touchpoint dates
-        - Identified resource and template needs
-        - Action items and next steps
-      value: |
-        - 
-        - 
-        - 
-
-  - type: checkboxes
-    id: prerequisites
-    attributes:
-      label: "Prerequisites Completed"
-      description: "Check off items that should be completed before this session"
-      options:
-        - label: "Stakeholder map template reviewed and partially completed"
-        - label: "Assessment interview summaries available"
-        - label: "Solution project scope and timeline defined"
-        - label: "Project team roles and responsibilities clarified"
-        - label: "SEP Co-Design Lead identified and contacted"
-        - label: "Meeting logistics arranged (room, video link, etc.)"
-
-  - type: dropdown
-    id: session_priority
-    attributes:
-      label: "Session Priority"
-      description: "How urgent is this working session?"
-      options:
-        - "High - Required for project progression"
-        - "Medium - Important for optimal co-design"
-        - "Low - Nice to have for refinement"
-    validations:
-      required: true
-
-  - type: textarea
-    id: agenda_outline
-    attributes:
-      label: "Session Agenda Outline"
-      description: "High-level agenda items and timing (detailed agenda available in templates)"
-      placeholder: |
-        1. Introduction and Objectives (15 min)
-        2. Review Current Status (15 min)
-        3. Main Working Session Activity (60 min)
-        4. Action Items and Next Steps (15 min)
-        5. Schedule Follow-up Activities (10 min)
-      value: |
-        1. Introduction and Objectives (15 min)
-        2. 
-        3. 
-        4. Next Steps and Action Items (15 min)
-
   - type: input
-    id: follow_up_session
+    id: session_date
     attributes:
-      label: "Next Working Session"
-      description: "When should the next working session be scheduled?"
-      placeholder: "e.g., 4-6 weeks after WS1, or 'TBD based on outcomes'"
-
-  - type: checkboxes
-    id: coordination_needs
+      label: Session Date
+      description: Date of the working session
+      placeholder: e.g., March 20, 2025
+    validations:
+      required: true
+      
+  - type: input
+    id: session_duration
     attributes:
-      label: "Coordination Required"
-      description: "What coordination is needed for this session?"
-      options:
-        - label: "Schedule with SEP Co-Design Lead"
-        - label: "Coordinate with NASA HQ if participation needed"
-        - label: "Arrange meeting room or video conference"
-        - label: "Send calendar invitations to all participants"
-        - label: "Prepare and distribute materials in advance"
-        - label: "Set up collaboration tools (Miro, shared documents)"
-
+      label: Session Duration
+      description: Expected duration of the session
+      placeholder: e.g., 2 hours, 90 minutes
+    validations:
+      required: true
+      
+  - type: textarea
+    id: session_purpose
+    attributes:
+      label: Primary Purpose
+      description: Clear statement of what this working session aims to accomplish
+      placeholder: |
+        This working session will establish the co-design framework for the project, 
+        identify the co-design lead, and develop the stakeholder engagement strategy 
+        for integration into the project plan.
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected_outcomes
+    attributes:
+      label: Expected Outcomes
+      description: Specific outcomes expected from this session
+      placeholder: |
+        - Designated co-design lead identified and confirmed
+        - Stakeholder engagement timeline developed
+        - Co-design strategy integrated into SEP section of project plan
+        - Communication protocols established
+      render: markdown
+    validations:
+      required: true
+      
   - type: textarea
     id: success_criteria
     attributes:
-      label: "Success Criteria"
-      description: "How will you know this working session was successful?"
+      label: Success Criteria
+      description: How you'll know this session was successful
       placeholder: |
-        - All participants understand the co-design approach
-        - Clear stakeholder engagement strategy defined
-        - Action items assigned with owners and due dates
-        - Next steps and timeline agreed upon
-        - Team alignment on co-design priorities
-      value: |
-        - 
-        - 
-        - 
-
-  - type: markdown
+        - All participants understand their roles in the co-design process
+        - Clear timeline established with specific milestones
+        - Stakeholder engagement strategy approved by all team members
+        - Next steps clearly defined and assigned
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: internal_participants
     attributes:
-      value: |
-        ---
+      label: Internal Team Participants
+      description: List internal team members and their roles in the session
+      placeholder: |
+        - Jane Smith - Project Lead - Overall project coordination
+        - John Doe - Technical Lead - Solution architecture input
+        - Mary Johnson - Data Specialist - Requirements clarification
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: sep_participants
+    attributes:
+      label: SEP Team Participants
+      description: List SEP team members and their responsibilities
+      placeholder: |
+        - SEP Deputy - Stakeholder engagement strategy guidance
+        - CoDesign Lead - Methodology and best practices
+        - Project Coordinator - Process facilitation
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: agency_participants
+    attributes:
+      label: Agency Stakeholders (if applicable)
+      description: List any agency stakeholders participating
+      placeholder: |
+        - Agency Name - Contact Name - Role
+        - USDA Forest Service - Jane Wilson - GIS Coordinator
+      render: markdown
+      
+  - type: input
+    id: total_participants
+    attributes:
+      label: Total Expected Participants
+      description: Total number of people expected in the session
+      placeholder: e.g., 8-10 participants
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: preparation_checklist
+    attributes:
+      label: Pre-Session Preparation Checklist
+      description: Check items as they are completed
+      options:
+        - label: Session agenda prepared with detailed timing
+        - label: Background materials compiled for participants
+        - label: Stakeholder worksheet prepared (if applicable)
+        - label: GitHub repository setup (if applicable)
+        - label: Assessment information compiled
+        - label: Reference materials and templates gathered
+        - label: Meeting platform tested (Zoom/Teams/Other)
+        - label: Screen sharing and recording capabilities verified
+        - label: Collaborative tools prepared (Miro/GitHub/Other)
+        - label: Invitations sent with agenda
+        - label: Background materials distributed to participants
+        - label: Technical requirements communicated
         
-        ## 📋 After Creating This Issue
+  - type: textarea
+    id: session_agenda
+    attributes:
+      label: Detailed Session Agenda
+      description: Outline the session flow with specific time allocations
+      placeholder: |
+        **Total Duration:** 2 hours
         
-        1. **Review Agenda Template**: Check `/docs/WORKING-SESSION-AGENDAS.md` for your specific session type
-        2. **Coordinate with SEP**: Contact SEP Co-Design Lead to confirm participation
-        3. **Prepare Materials**: Gather all prerequisites and materials listed above  
-        4. **Send Invitations**: Use templates in `/templates/communications/meeting-invitations/`
-        5. **Set Up Session**: Arrange meeting logistics (room, video, collaboration tools)
+        **Opening (15 minutes)**
+        - Welcome and introductions (5 min)
+        - Session objectives and agenda overview (5 min)
+        - Ground rules and expectations (5 min)
+
+        **Main Working Session (90 minutes)**
+        - Co-design methodology overview (20 min)
+        - Stakeholder mapping exercise (25 min)
+        - Break (10 min)
+        - Timeline development workshop (25 min)
+        - Action planning (10 min)
+
+        **Wrap-up (15 minutes)**
+        - Summary of accomplishments (5 min)
+        - Action items assignment (5 min)
+        - Next steps confirmation (5 min)
+      render: markdown
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: codesign_101_activities
+    attributes:
+      label: CoDesign 101 Session Activities (if applicable)
+      description: Check activities planned for CoDesign 101 sessions
+      options:
+        - label: Identify solution project team co-design lead
+        - label: Review co-design principles and methodology
+        - label: Discuss stakeholder engagement strategy
+        - label: Plan integration with SEP section of project plan
+        - label: Establish communication protocols
+        - label: Review SNWG co-design best practices
         
-        ## 📞 Session-Specific Guidance
+  - type: checkboxes
+    id: stakeholder_review_activities
+    attributes:
+      label: Stakeholder Review & Worksheet Activities (if applicable)
+      description: Check activities for stakeholder review sessions
+      options:
+        - label: Complete GitHub repository with assessment info
+        - label: Work through stakeholder worksheet systematically
+        - label: Finalize co-design strategy with timeline
+        - label: Identify key decision points requiring stakeholder input
+        - label: Plan upcoming touchpoints
+        - label: Update stakeholder contact information
         
-        ### WS1: Co-Design 101
-        - **Purpose**: Introduce co-design concepts, map stakeholders, plan initial approach
-        - **Key Output**: Stakeholder engagement strategy and initial touchpoint plan
-        - **Follow-up**: Touchpoint 1 planning and execution
+  - type: checkboxes
+    id: requirements_verification_activities
+    attributes:
+      label: Requirements Verification Activities (if applicable)
+      description: Check activities for requirements verification sessions
+      options:
+        - label: Review and validate current requirements understanding
+        - label: Complete worksheet with solution implementation teams
+        - label: Define success criteria with stakeholders
+        - label: Identify gaps in current understanding
+        - label: Plan additional verification activities
+        - label: Document requirements changes or updates
         
-        ### WS2: Co-Design Strategy Meeting  
-        - **Purpose**: Refine approach based on initial stakeholder interactions
-        - **Key Output**: Detailed stakeholder requirements and engagement plan
-        - **Follow-up**: Touchpoint 4 & 5 planning
+  - type: textarea
+    id: discussion_topics
+    attributes:
+      label: Key Discussion Topics
+      description: Required and optional discussion points for the session
+      placeholder: |
+        **Required Discussion Points:**
+        - Stakeholder engagement timeline - Decision Needed: Yes - By When: End of session
+        - Co-design lead designation - Decision Needed: Yes - By When: End of session
+        - Communication protocols - Decision Needed: Yes - By When: Next week
         
-        ### WS3: Requirements Consolidation
-        - **Purpose**: Consolidate stakeholder input and finalize requirements
-        - **Key Output**: Final stakeholder requirements and implementation plan
-        - **Follow-up**: Implementation phase co-design planning
+        **Optional Discussion Points:**
+        - Advanced co-design techniques - If Time Allows
+        - Integration with other projects - If Time Allows
         
-        ## 🔗 Resources
+        **Parking Lot Items:**
+        [Items that come up during session but should be addressed separately]
+      render: markdown
+      
+  - type: textarea
+    id: outcomes_results
+    attributes:
+      label: Session Outcomes & Results (Complete After Session)
+      description: Document the results after the session is completed
+      placeholder: |
+        **Decisions Made:**
+        - Co-design lead designated: [Name] - Impact: [Description]
+        - Stakeholder engagement approach approved - Impact: [Description]
+
+        **Action Items Generated:**
+        - [ ] Update project plan with co-design strategy - Owner: [Name] - Due: [Date] - Priority: High
+        - [ ] Schedule first stakeholder touchpoint - Owner: [Name] - Due: [Date] - Priority: High
+
+        **Key Insights:**
+        - [Insight about stakeholder needs or solution approach]
+        - [Insight about implementation challenges or opportunities]
+
+        **Documents Updated:**
+        - [ ] Project plan - Changes: [Description]
+        - [ ] Stakeholder worksheet - Changes: [Description]
+      render: markdown
+      
+  - type: checkboxes
+    id: followup_actions
+    attributes:
+      label: Follow-up Actions Checklist
+      description: Track follow-up activities after the session
+      options:
+        - label: Session summary sent to all participants (within 48 hours)
+        - label: GitHub repository updated with outcomes
+        - label: Updated documents distributed
+        - label: Follow-up meetings scheduled if needed
+        - label: Action items assigned to session facilitator completed
+        - label: Participant action items followed up on
+        - label: Project timeline updated based on session outcomes
+        - label: Materials prepared for next session/touchpoint
         
-        - **Detailed Agendas**: `/docs/WORKING-SESSION-AGENDAS.md`
-        - **Meeting Templates**: `/templates/communications/meeting-invitations/`
-        - **Collaboration Tools**: Miro boards, shared documents, worksheets
+  - type: textarea
+    id: session_evaluation
+    attributes:
+      label: Session Evaluation
+      description: Assess the effectiveness of the session
+      placeholder: |
+        **Participant Feedback:**
+        - Session usefulness: [To be collected via survey]
+        - Agenda appropriateness: [Feedback on timing and content]
+        - Facilitation quality: [Assessment of session leadership]
+        - Outcome achievement: [Did we meet our objectives?]
+
+        **Facilitator Assessment:**
+        - Objectives met: Yes/No/Partially
+        - Time management: Effective/Needs improvement
+        - Participation level: High/Medium/Low
+        - Technical issues: None/Minor/Major
+
+        **Improvements for Next Time:**
+        - [What worked well that should be repeated]
+        - [What could be improved for future sessions]
+      render: markdown
+      
+  - type: textarea
+    id: resources_links
+    attributes:
+      label: Resources & Links
+      description: Links to session materials, outputs, and related issues
+      placeholder: |
+        **Session Materials:**
+        - [Link to agenda]
+        - [Link to presentation slides]
+        - [Link to collaborative workspace (Miro, etc.)]
+
+        **Outputs:**
+        - [Link to session recording]
+        - [Link to detailed notes]
+        - [Link to completed worksheets]
+        - [Link to updated GitHub repository]
+
+        **Related Issues:**
+        - Supports #[touchpoint-issue-number]
+        - Leads to #[next-milestone-number]
+        - Related to #[other-working-session-number]
+      render: markdown
