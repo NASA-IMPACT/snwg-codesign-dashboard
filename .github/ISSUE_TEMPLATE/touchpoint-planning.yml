@@ -1,184 +1,104 @@
----
 name: 🤝 Touchpoint Planning
-about: Plan and execute stakeholder touchpoints in the co-design process
+description: Plan and execute stakeholder touchpoints in the co-design process
 title: '[TOUCHPOINT] [Project Name] - [Touchpoint Name]'
 labels: ['touchpoint', 'stakeholder-engagement', 'planning']
-assignees: ['co-design-lead']
----
-
-## 🤝 Touchpoint: [Touchpoint Name]
-
-**Project:** [Solution Project Name]  
-**Touchpoint Type:** [Select One: Solution Validation | Agency Feedback Survey | Solution Intro | Outreach & Screening | Requirements Verification | Interactive Co-Design | Solution Launch/Training | Transition/Closeout]  
-**Phase:** [Assessment | Pre-Formulation | Formulation | Implementation | Operations]  
-**Timeline:** [Target Date/Date Range]  
-
----
-
-### 📊 Stakeholder Information
-
-**Primary Agencies:**
-- [ ] [Agency Name] - [Contact Name, Role, Email]
-- [ ] [Agency Name] - [Contact Name, Role, Email]
-
-**Stakeholder Roles Represented:**
-- [ ] Agency Rep/Lead (Management level)
-- [ ] IT/Data Support Person  
-- [ ] Operational End User/Decision Maker
-- [ ] Other: [Specify]
-
-**Expected Participation:** [Number] stakeholders
-
----
-
-### 🎯 Objectives & Outcomes
-
-**Primary Objectives:**
-- [ ] [Objective 1 - Be specific and measurable]
-- [ ] [Objective 2 - Be specific and measurable]
-- [ ] [Objective 3 - Be specific and measurable]
-
-**Success Criteria:**
-- [ ] [What success looks like for this touchpoint]
-- [ ] [Measurable outcome or deliverable]
-
-**Stakeholder Value Proposition:**
-**What agencies gain:** [Clear benefit statement - how this helps their mission]  
-**Time commitment:** [Realistic expectation - meeting duration, prep time, etc.]  
-**Impact on their workflow:** [How this touchpoint affects their day-to-day operations]
-
----
-
-### 📋 Preparation Checklist
-
-**Pre-Touchpoint Activities:**
-- [ ] Stakeholder contact list updated and verified
-- [ ] Meeting materials prepared ([List specific materials needed])
-- [ ] Agenda drafted and reviewed with SEP team
-- [ ] Technology/platform tested (Zoom, Teams, etc.)
-- [ ] Background materials sent to stakeholders ([X] days in advance)
-- [ ] Calendar invitations sent with clear agenda
-- [ ] Internal team briefed on objectives and roles
-
-**Materials to Prepare:**
-- [ ] Presentation slides (agency-friendly, non-technical language)
-- [ ] Solution demonstration or prototype (if applicable)
-- [ ] Feedback collection form or survey
-- [ ] Reference documents: [List any relevant docs]
-- [ ] Contact information and emergency backup plans
-
----
-
-### 📅 Execution Plan
-
-**Meeting Structure:**
-1. **Introduction & Context** ([X] minutes)
-   - Welcome and introductions
-   - Meeting objectives and agenda overview
-   - Background on solution and current status
-
-2. **Main Content** ([X] minutes)
-   - [Specific agenda item 1]
-   - [Specific agenda item 2]
-   - [Specific agenda item 3]
-
-3. **Feedback & Discussion** ([X] minutes)
-   - Structured feedback collection
-   - Q&A session
-   - Clarification of next steps
-
-4. **Wrap-up & Next Steps** ([X] minutes)
-   - Summary of key outcomes
-   - Action items assignment
-   - Next touchpoint scheduling
-
-**Key Questions to Address:**
-- [ ] [Question 1 that directly impacts solution development]
-- [ ] [Question 2 that validates current approach]
-- [ ] [Question 3 that identifies potential issues]
-
----
-
-### 📊 Communication Strategy
-
-**Before the Touchpoint:**
-- [ ] Initial invitation email sent ([Date])
-- [ ] Reminder email sent ([Date])
-- [ ] Background materials distributed ([Date])
-
-**During the Touchpoint:**
-- [ ] Meeting facilitated and recorded (with permission)
-- [ ] Action items captured in real-time
-- [ ] Key quotes and feedback documented
-
-**After the Touchpoint:**
-- [ ] Thank you email sent within 24 hours
-- [ ] Meeting summary distributed within 48 hours
-- [ ] Action items assigned and tracked
-- [ ] Feedback integrated into solution planning
-
----
-
-### 📈 Outcomes & Results
-
-**[To be completed after touchpoint execution]**
-
-**Participation:**
-- Agencies represented: [List]
-- Total attendees: [Number]
-- Response rate: [Percentage]
-
-**Key Outcomes:**
-- [ ] [Outcome 1 achieved/not achieved]
-- [ ] [Outcome 2 achieved/not achieved]
-- [ ] [Outcome 3 achieved/not achieved]
-
-**Stakeholder Feedback Summary:**
-- **Positive feedback:** [Summary of what's working well]
-- **Concerns raised:** [Issues or challenges identified]
-- **Suggestions for improvement:** [Stakeholder recommendations]
-
-**Action Items Generated:**
-- [ ] [Action Item 1] - Assigned to: [Name] - Due: [Date]
-- [ ] [Action Item 2] - Assigned to: [Name] - Due: [Date]
-- [ ] [Action Item 3] - Assigned to: [Name] - Due: [Date]
-
-**Impact on Solution Development:**
-- [How this touchpoint changed or validated the solution approach]
-- [Any adjustments made based on stakeholder input]
-
----
-
-### 🔄 Next Steps
-
-**Immediate Actions (Next 1-2 weeks):**
-- [ ] [Immediate follow-up action]
-- [ ] [Document updates needed]
-- [ ] [Stakeholder communications]
-
-**Next Touchpoint:**
-- **Type:** [Next touchpoint in sequence]
-- **Target Date:** [Date]
-- **Key Focus:** [What the next touchpoint will accomplish]
-
-**Dependencies:**
-- [ ] [External dependency 1]
-- [ ] [Internal dependency 1]
-
----
-
-### 📎 Resources & Links
-
-**Meeting Materials:**
-- [Link to presentation slides]
-- [Link to demo or prototype]
-- [Link to feedback survey]
-
-**Documentation:**
-- [Link to meeting recording]
-- [Link to detailed notes]
-- [Link to stakeholder contact list]
-
-**Related Issues:**
-- Closes #[number] (if this touchpoint completes a planning issue)
-- Related to #[number] (if connected to other touchpoints)
+assignees:
+  - co-design-lead
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🤝 Touchpoint Planning Template
+        
+        Use this template to plan and track stakeholder touchpoints in your co-design process.
+        
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+      description: Name of the solution project
+      placeholder: e.g., HLS-LL Data Access Portal
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: touchpoint_type
+    attributes:
+      label: Touchpoint Type
+      description: Select the type of touchpoint being planned
+      options:
+        - Solution Validation
+        - Agency Feedback Survey
+        - Solution Intro to Stakeholders
+        - Outreach & Screening
+        - Requirements Verification
+        - Interactive Co-Design
+        - Solution Launch/Training
+        - Transition/Closeout
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Project Phase
+      description: Current phase of the solution project
+      options:
+        - Assessment
+        - Pre-Formulation
+        - Formulation
+        - Implementation
+        - Operations
+    validations:
+      required: true
+      
+  - type: input
+    id: timeline
+    attributes:
+      label: Target Timeline
+      description: Target date or date range for this touchpoint
+      placeholder: e.g., March 15, 2025 or March 10-17, 2025
+    validations:
+      required: true
+      
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Primary Agencies & Stakeholders
+      description: List the agencies and key contacts involved
+      placeholder: |
+        - USDA Forest Service - Jane Smith, GIS Analyst, jane.smith@usda.gov
+        - EPA Region 4 - John Doe, Environmental Scientist, john.doe@epa.gov
+      render: markdown
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: stakeholder_roles
+    attributes:
+      label: Stakeholder Roles Represented
+      description: Check all stakeholder role types that will participate
+      options:
+        - label: Agency Rep/Lead (Management level)
+        - label: IT/Data Support Person
+        - label: Operational End User/Decision Maker
+        - label: Technical Champion
+        - label: External Partner/Contractor
+        
+  - type: input
+    id: expected_participation
+    attributes:
+      label: Expected Participation
+      description: Number of stakeholders expected to participate
+      placeholder: e.g., 8-12 stakeholders
+    validations:
+      required: true
+      
+  - type: textarea
+    id: objectives
+    attributes:
+      label: Primary Objectives
+      description: List the specific objectives for this touchpoint
+      placeholder: |
+        - Validate current solution approach with agency workflows
+        - Collect feedback on user interface
