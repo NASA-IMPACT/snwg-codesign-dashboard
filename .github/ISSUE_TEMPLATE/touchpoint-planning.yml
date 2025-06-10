@@ -101,4 +101,184 @@ body:
       description: List the specific objectives for this touchpoint
       placeholder: |
         - Validate current solution approach with agency workflows
-        - Collect feedback on user interface
+        - Collect feedback on user interface design
+        - Confirm data format requirements
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Success Criteria
+      description: How will you know this touchpoint was successful?
+      placeholder: |
+        - At least 75% of invited stakeholders participate
+        - Clear validation of 3 key requirements
+        - Actionable feedback on user interface
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: stakeholder_value
+    attributes:
+      label: Stakeholder Value Proposition
+      description: What do agencies gain from participating? What's the time commitment?
+      placeholder: |
+        **What agencies gain:** Direct input into solution design that will improve their daily workflows
+        **Time commitment:** 90-minute meeting + 15 minutes of prep
+        **Impact on workflow:** Opportunity to shape tool that will save 2-3 hours per week
+      render: markdown
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: preparation
+    attributes:
+      label: Pre-Touchpoint Preparation Checklist
+      description: Check items as they are completed
+      options:
+        - label: Stakeholder contact list updated and verified
+        - label: Meeting materials prepared
+        - label: Agenda drafted and reviewed with SEP team
+        - label: Technology/platform tested
+        - label: Background materials prepared for stakeholders
+        - label: Calendar invitations sent with clear agenda
+        - label: Internal team briefed on objectives and roles
+        
+  - type: textarea
+    id: materials_needed
+    attributes:
+      label: Materials to Prepare
+      description: Specific materials needed for this touchpoint
+      placeholder: |
+        - Presentation slides (agency-friendly, non-technical language)
+        - Solution demonstration or prototype
+        - Feedback collection form or survey
+        - Reference documents: [list any relevant docs]
+      render: markdown
+      
+  - type: textarea
+    id: meeting_structure
+    attributes:
+      label: Meeting Structure & Agenda
+      description: Outline the meeting flow with time allocations
+      placeholder: |
+        **Total Duration:** 90 minutes
+        
+        1. **Introduction & Context** (15 minutes)
+           - Welcome and introductions
+           - Meeting objectives and agenda overview
+           - Background on solution and current status
+
+        2. **Main Content** (45 minutes)
+           - Solution demonstration
+           - Workflow integration discussion
+           - Requirements validation
+
+        3. **Feedback & Discussion** (20 minutes)
+           - Structured feedback collection
+           - Q&A session
+           - Clarification of next steps
+
+        4. **Wrap-up & Next Steps** (10 minutes)
+           - Summary of key outcomes
+           - Action items assignment
+           - Next touchpoint scheduling
+      render: markdown
+      
+  - type: textarea
+    id: key_questions
+    attributes:
+      label: Key Questions to Address
+      description: Critical questions that must be answered during this touchpoint
+      placeholder: |
+        - How does this solution integrate with your current data processing workflow?
+        - What data formats are most critical for your operational decisions?
+        - What would prevent adoption of this solution in your agency?
+      render: markdown
+      
+  - type: checkboxes
+    id: communication_strategy
+    attributes:
+      label: Communication Strategy
+      description: Track communication before, during, and after the touchpoint
+      options:
+        - label: Initial invitation email sent
+        - label: Reminder email sent (1 week before)
+        - label: Background materials distributed (3 days before)
+        - label: Meeting facilitated and recorded (with permission)
+        - label: Action items captured in real-time
+        - label: Thank you email sent within 24 hours
+        - label: Meeting summary distributed within 48 hours
+        - label: Action items assigned and tracked
+        
+  - type: textarea
+    id: outcomes_section
+    attributes:
+      label: Outcomes & Results (Complete After Touchpoint)
+      description: Document outcomes after the touchpoint is completed
+      placeholder: |
+        **Participation:**
+        - Agencies represented: [List]
+        - Total attendees: [Number]
+        - Response rate: [Percentage]
+
+        **Key Outcomes:**
+        - [Outcome 1 achieved/not achieved]
+        - [Outcome 2 achieved/not achieved]
+
+        **Stakeholder Feedback Summary:**
+        - **Positive feedback:** [What's working well]
+        - **Concerns raised:** [Issues identified]
+        - **Suggestions:** [Recommendations]
+
+        **Action Items Generated:**
+        - [Action Item 1] - Owner: [Name] - Due: [Date]
+        - [Action Item 2] - Owner: [Name] - Due: [Date]
+
+        **Impact on Solution Development:**
+        - [How this touchpoint changed or validated the solution approach]
+      render: markdown
+      
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: Next Steps & Follow-up
+      description: Immediate actions and planning for next touchpoint
+      placeholder: |
+        **Immediate Actions (Next 1-2 weeks):**
+        - [Immediate follow-up action]
+        - [Document updates needed]
+
+        **Next Touchpoint:**
+        - **Type:** [Next touchpoint in sequence]
+        - **Target Date:** [Date]
+        - **Key Focus:** [What the next touchpoint will accomplish]
+
+        **Dependencies:**
+        - [External dependency 1]
+        - [Internal dependency 1]
+      render: markdown
+      
+  - type: textarea
+    id: resources_links
+    attributes:
+      label: Resources & Links
+      description: Links to meeting materials, documentation, and related issues
+      placeholder: |
+        **Meeting Materials:**
+        - [Link to presentation slides]
+        - [Link to demo or prototype]
+        - [Link to feedback survey]
+
+        **Documentation:**
+        - [Link to meeting recording]
+        - [Link to detailed notes]
+        - [Link to stakeholder contact list]
+
+        **Related Issues:**
+        - Closes #[number] (if this touchpoint completes a planning issue)
+        - Related to #[number] (if connected to other touchpoints)
+      render: markdown
