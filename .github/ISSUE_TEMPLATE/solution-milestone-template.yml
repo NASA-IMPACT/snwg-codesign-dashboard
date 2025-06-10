@@ -1,0 +1,307 @@
+name: 🚀 Solution Milestone
+description: Track major solution development milestones with stakeholder impact
+title: '[MILESTONE] [Project Name] - [Milestone Name]'
+labels: ['milestone', 'solution-development', 'stakeholder-impact']
+assignees:
+  - project-lead
+  - co-design-lead
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Solution Milestone Template
+        
+        Use this template to track major solution development milestones and their impact on stakeholders.
+        
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+      description: Name of the solution project
+      placeholder: e.g., HLS-LL Data Access Portal
+    validations:
+      required: true
+      
+  - type: input
+    id: milestone_name
+    attributes:
+      label: Milestone Name
+      description: Specific name for this milestone
+      placeholder: e.g., Beta Release v1.0, User Interface Complete
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: milestone_type
+    attributes:
+      label: Milestone Type
+      description: Select the type of milestone
+      options:
+        - Technical Development
+        - Prototype Ready
+        - Beta Release
+        - Production Ready
+        - Training Complete
+        - Integration Complete
+        - Testing Complete
+    validations:
+      required: true
+      
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Date
+      description: Target completion date for this milestone
+      placeholder: e.g., April 15, 2025
+    validations:
+      required: true
+      
+  - type: input
+    id: completion_date
+    attributes:
+      label: Completion Date
+      description: Actual completion date (fill when milestone is complete)
+      placeholder: e.g., April 18, 2025
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Milestone Description
+      description: Brief description of what this milestone represents and why it's important
+      placeholder: |
+        This milestone marks the completion of the user interface development phase, 
+        making the solution ready for stakeholder demonstration and feedback collection.
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: technical_achievement
+    attributes:
+      label: Technical Achievement
+      description: What technical capability or development is being completed
+      placeholder: |
+        - User authentication system implemented
+        - Data visualization dashboard complete
+        - API endpoints fully functional
+        - Performance requirements met
+      render: markdown
+    validations:
+      required: true
+      
+  - type: textarea
+    id: stakeholder_impact
+    attributes:
+      label: Stakeholder Impact
+      description: How this milestone affects agency workflows, operations, or decision-making
+      placeholder: |
+        Agencies will now be able to:
+        - Access real-time data through intuitive dashboard
+        - Export data in their preferred formats
+        - Integrate with existing GIS workflows
+        - Reduce data processing time by 60%
+      render: markdown
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: demo_readiness
+    attributes:
+      label: Demo Readiness Assessment
+      description: Check all items that are ready for stakeholder demonstration
+      options:
+        - label: Solution functionality ready for demonstration
+        - label: Demo materials prepared for non-technical audience
+        - label: Demo environment tested and stable
+        - label: User interface ready for stakeholder feedback
+        - label: Demo script prepared and rehearsed
+        
+  - type: checkboxes
+    id: documentation_status
+    attributes:
+      label: Documentation Status
+      description: Check documentation items that are complete
+      options:
+        - label: User-facing documentation drafted
+        - label: Technical specifications updated
+        - label: Training materials outlined
+        - label: FAQ or troubleshooting guide started
+        - label: Installation/setup guide prepared
+        
+  - type: checkboxes
+    id: agency_integration
+    attributes:
+      label: Agency Integration Readiness
+      description: Check integration items that are addressed
+      options:
+        - label: Data format requirements verified with stakeholders
+        - label: Delivery mechanism confirmed (web portal, API, etc.)
+        - label: Access/authentication requirements defined
+        - label: IT security requirements addressed
+        - label: Performance benchmarks validated
+        
+  - type: textarea
+    id: technical_progress
+    attributes:
+      label: Core Development Progress
+      description: List specific technical milestones completed
+      placeholder: |
+        - [ ] Backend API development complete
+        - [ ] Frontend user interface complete
+        - [ ] Database schema optimized
+        - [ ] Integration testing passed
+        - [ ] Performance benchmarks met
+      render: markdown
+      
+  - type: textarea
+    id: quality_assurance
+    attributes:
+      label: Quality Assurance Status
+      description: Testing and validation completed
+      placeholder: |
+        - [ ] Unit testing completed (95% coverage)
+        - [ ] Integration testing passed
+        - [ ] Performance testing meets requirements
+        - [ ] Security testing completed
+        - [ ] User acceptance testing ready
+      render: markdown
+      
+  - type: textarea
+    id: integration_status
+    attributes:
+      label: Integration Status
+      description: Status of various integration points
+      placeholder: |
+        - Data Source Integration - Status: Complete
+        - GIS Platform Integration - Status: In Progress
+        - Authentication System - Status: Complete
+        - External API Integration - Status: Blocked (waiting on vendor)
+      render: markdown
+      
+  - type: checkboxes
+    id: stakeholder_integration
+    attributes:
+      label: Stakeholder Integration Checklist
+      description: Check items related to stakeholder feedback incorporation
+      options:
+        - label: Current development aligns with agency requirements
+        - label: No scope drift from original stakeholder needs
+        - label: Previous stakeholder feedback reviewed and addressed
+        - label: Priority feedback items implemented
+        - label: New requirements identified and prioritized
+        - label: Stakeholder update materials prepared
+        
+  - type: textarea
+    id: decision_points
+    attributes:
+      label: Decision Points Requiring Agency Input
+      description: Critical decisions that need stakeholder input
+      placeholder: |
+        **Critical Decisions:**
+        - Data refresh frequency (hourly vs daily) - **Agency Input Needed:** Operational requirements
+        - User permission levels - **Agency Input Needed:** Security and workflow requirements
+        
+        **Configuration Choices:**
+        - Default map view settings - **Impact:** Affects daily user experience
+        - Export format priorities - **Impact:** Integration with existing tools
+      render: markdown
+      
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables & Outputs
+      description: List key deliverables produced by this milestone
+      placeholder: |
+        **Technical Deliverables:**
+        - [ ] Beta version deployed to staging environment - Link: [URL]
+        - [ ] API documentation updated - Link: [URL]
+        
+        **Stakeholder-Facing Materials:**
+        - [ ] User demonstration video - Link: [URL]
+        - [ ] Updated user guide - Link: [URL]
+        
+        **Documentation Updates:**
+        - [ ] Technical architecture document updated
+        - [ ] Installation guide verified
+      render: markdown
+      
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: Next Steps & Actions
+      description: Immediate actions and upcoming work
+      placeholder: |
+        **Immediate Actions (Next 1-2 weeks):**
+        - [ ] Schedule demonstration for key stakeholders - Owner: [Name] - Due: [Date]
+        - [ ] Deploy to production environment - Owner: [Name] - Due: [Date]
+        
+        **Stakeholder Engagement Actions:**
+        - [ ] Send progress update to agency contacts
+        - [ ] Collect feedback on milestone deliverables
+        - [ ] Plan next touchpoint based on milestone completion
+        
+        **Upcoming Dependencies:**
+        - [ ] Vendor API documentation - Blocking: Integration testing - ETA: [Date]
+        - [ ] Security clearance approval - Blocking: Production deployment - ETA: [Date]
+      render: markdown
+      
+  - type: textarea
+    id: success_metrics
+    attributes:
+      label: Success Metrics
+      description: Quantifiable measures of milestone success
+      placeholder: |
+        **Technical Metrics:**
+        - Performance: Response time < 2 seconds for 95% of queries
+        - Accuracy: Data validation error rate < 0.1%
+        - Reliability: 99.5% uptime during testing period
+        
+        **Stakeholder Satisfaction:**
+        - Feedback score: [To be measured after demo]
+        - Usability rating: [To be measured during user testing]
+        - Adoption readiness: [To be assessed with agencies]
+      render: markdown
+      
+  - type: textarea
+    id: risk_tracking
+    attributes:
+      label: Risk & Issue Tracking
+      description: Current risks, blockers, and quality concerns
+      placeholder: |
+        **Current Risks:**
+        - **Risk:** Integration delays with external API - **Impact:** Medium - **Mitigation:** Developing fallback approach
+        - **Risk:** Stakeholder availability for testing - **Impact:** Low - **Mitigation:** Flexible scheduling
+        
+        **Blockers:**
+        - [ ] Waiting on security approval for production deployment - **Resolution:** Follow up with security team weekly
+        
+        **Quality Concerns:**
+        - [ ] Performance degradation with large datasets - **Severity:** Medium - **Action:** Optimization sprint planned
+      render: markdown
+      
+  - type: textarea
+    id: resources_links
+    attributes:
+      label: Resources & Links
+      description: Links to technical resources, stakeholder materials, and project management
+      placeholder: |
+        **Technical Resources:**
+        - [Link to code repository/branch]
+        - [Link to technical documentation]
+        - [Link to test results]
+        
+        **Stakeholder Resources:**
+        - [Link to demo environment]
+        - [Link to user documentation]
+        - [Link to feedback collection form]
+        
+        **Project Management:**
+        - [Link to project plan updates]
+        - [Link to risk register updates]
+        - [Link to stakeholder communication log]
+        
+        **Related Issues:**
+        - Related to #[touchpoint-issue-number] (connects to specific touchpoint)
+        - Blocks #[future-milestone-number] (gates future work)
+        - Depends on #[dependency-issue-number] (waiting on other work)
+      render: markdown
