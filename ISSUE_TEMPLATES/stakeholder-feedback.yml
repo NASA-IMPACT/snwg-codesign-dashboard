@@ -102,4 +102,197 @@ body:
         - Point 1: [detailed description]
         - Point 2: [detailed description]
         
-        **Stakeholder Suggestions
+        **Stakeholder Suggestions:**
+        - Suggestion 1: [what they recommended]
+        - Suggestion 2: [what they recommended]
+        
+        **Questions or Concerns Raised:**
+        - Question 1: [what they asked about]
+        - Concern 1: [what they're worried about]
+        
+        **Additional Context:**
+        [Any other relevant information or quotes]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback_sentiment
+    attributes:
+      label: "Overall Feedback Sentiment"
+      description: "What was the overall tone of this feedback?"
+      options:
+        - "Very Positive - Enthusiastic support"
+        - "Positive - Generally supportive with suggestions"
+        - "Neutral - Mixed or informational feedback"
+        - "Concerned - Worried about specific issues"
+        - "Negative - Significant concerns or objections"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority_level
+    attributes:
+      label: "Priority Level"
+      description: "How urgent is it to address this feedback?"
+      options:
+        - "Critical - Must address immediately (blocks progress)"
+        - "High - Should address soon (impacts stakeholder satisfaction)"
+        - "Medium - Important to address (improves solution)"
+        - "Low - Nice to address when possible"
+        - "Information Only - No action required"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity_assessment
+    attributes:
+      label: "Implementation Complexity"
+      description: "How difficult would it be to address this feedback?"
+      options:
+        - "Simple - Quick changes or clarifications needed"
+        - "Moderate - Some design or process changes required"
+        - "Complex - Significant development or planning needed"
+        - "Very Complex - Major project scope or approach changes"
+        - "Unknown - Needs technical assessment"
+
+  - type: checkboxes
+    id: action_required
+    attributes:
+      label: "Actions Required"
+      description: "What types of actions are needed to address this feedback?"
+      options:
+        - label: "Technical consultation with development team"
+        - label: "Project plan or timeline updates"
+        - label: "Budget impact assessment"
+        - label: "Additional stakeholder consultation"
+        - label: "Requirements documentation update"
+        - label: "Follow-up meeting or call with stakeholder"
+        - label: "Written response or clarification"
+        - label: "Escalation to NASA HQ or SNWG MO"
+        - label: "Coordination with other solution projects"
+
+  - type: textarea
+    id: initial_response_plan
+    attributes:
+      label: "Initial Response Plan"
+      description: "How do you plan to address this feedback?"
+      placeholder: |
+        **Immediate Actions:**
+        - [ ] Action 1: [what, who, when]
+        - [ ] Action 2: [what, who, when]
+        
+        **Investigation Needed:**
+        - [ ] Research item 1: [what needs to be looked into]
+        - [ ] Consultation needed: [who to talk to]
+        
+        **Response Timeline:**
+        - Initial acknowledgment: [when]
+        - Full response: [when]
+        
+        **Potential Solutions:**
+        - Option 1: [brief description]
+        - Option 2: [brief description]
+
+  - type: input
+    id: response_deadline
+    attributes:
+      label: "Response Timeline"
+      description: "When should we respond to the stakeholder about this feedback?"
+      placeholder: "e.g., Within 1 week, By YYYY-MM-DD, ASAP"
+
+  - type: input
+    id: assigned_owner
+    attributes:
+      label: "Action Owner"
+      description: "Who is responsible for addressing this feedback?"
+      placeholder: "e.g., @username, Implementation Team Lead, Technical Lead"
+
+  - type: checkboxes
+    id: impact_assessment
+    attributes:
+      label: "Potential Impact Areas"
+      description: "What aspects of the project might be affected by addressing this feedback?"
+      options:
+        - label: "Solution technical specifications"
+        - label: "User interface or experience design"
+        - label: "Data formats or delivery methods"
+        - label: "Project timeline or milestones"
+        - label: "Budget or resource requirements"
+        - label: "Stakeholder engagement approach"
+        - label: "Training or documentation needs"
+        - label: "Integration with other solutions"
+        - label: "Operational deployment approach"
+
+  - type: textarea
+    id: stakeholder_context
+    attributes:
+      label: "Stakeholder Context"
+      description: "Any additional context about this stakeholder or their feedback?"
+      placeholder: |
+        **Stakeholder Role:** [their position/responsibilities]
+        **Previous Engagement:** [history of interactions]
+        **Influence Level:** [how much influence they have]
+        **Technical Expertise:** [their technical background]
+        **Agency Constraints:** [any limitations they mentioned]
+        **Champion Potential:** [could they advocate for the solution?]
+
+  - type: checkboxes
+    id: follow_up_needed
+    attributes:
+      label: "Follow-up Required"
+      description: "What follow-up actions are needed?"
+      options:
+        - label: "Schedule follow-up meeting with stakeholder"
+        - label: "Provide written response to stakeholder"
+        - label: "Update stakeholder map with new information"
+        - label: "Brief implementation team on feedback"
+        - label: "Coordinate with SEP team on response approach"
+        - label: "Document lessons learned for other touchpoints"
+        - label: "Update project documentation or requirements"
+        - label: "Plan demonstration or prototype for stakeholder"
+
+  - type: textarea
+    id: lessons_learned
+    attributes:
+      label: "Lessons Learned"
+      description: "What did you learn from this feedback that could improve future stakeholder engagement?"
+      placeholder: |
+        **Communication Insights:**
+        - What communication approach worked well?
+        - What could be improved?
+        
+        **Process Improvements:**
+        - How could we better prepare for similar feedback?
+        - What questions should we ask in future touchpoints?
+        
+        **Stakeholder Insights:**
+        - What did we learn about this stakeholder's needs?
+        - How can we better engage similar stakeholders?
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## 📋 After Creating This Issue
+        
+        1. **Acknowledge Receipt**: Send brief acknowledgment to stakeholder if needed
+        2. **Assess and Plan**: Review feedback with implementation team
+        3. **Coordinate Response**: Work with SEP team if guidance needed
+        4. **Track Progress**: Update this issue as you work on addressing feedback
+        5. **Document Outcome**: Record final resolution and stakeholder satisfaction
+        6. **Update Records**: Update stakeholder map and engagement log
+        
+        ## 🔄 Integration with Co-Design Process
+        
+        - **Link to Touchpoint**: Reference the touchpoint issue that generated this feedback
+        - **Update Requirements**: Modify requirements documentation if needed  
+        - **Inform Future Planning**: Use insights for planning subsequent touchpoints
+        - **Share Learnings**: Discuss patterns in team meetings and working sessions
+        
+        ## 📞 Need Help?
+        
+        - **Response Strategy**: Contact SEP Co-Design Team for guidance
+        - **Technical Questions**: Consult with implementation team technical leads
+        - **Stakeholder Relations**: Review stakeholder map and engagement history
+        - **Process Questions**: Check co-design guide in `/docs/CODESIGN-GUIDE.md`
