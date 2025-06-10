@@ -23,145 +23,203 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Create Co-Design Project Board
+      - name: Create initial issues
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            // Create project board
-            const projectName = `${{ github.event.inputs.solution_name }} Co-Design Pipeline`;
-            
-            // Note: This uses GitHub Projects API v2
-            const project = await github.rest.projects.createForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: projectName,
-              body: `Co-design tracking for ${{ github.event.inputs.solution_name }} solution project`
-            });
-            
-            console.log(`Created project: ${project.data.html_url}`);
-            
-            // Create columns
-            const columns = [
-              { name: '📋 Stakeholder Identification', purpose: 'Identify and map stakeholders' },
-              { name: '📝 Touchpoint Planning', purpose: 'Plan touchpoints and working sessions' },
-              { name: '🤝 Active Engagement', purpose: 'Execute touchpoints and communications' },
-              { name: '💬 Feedback Integration', purpose: 'Process stakeholder feedback' },
-              { name: '✅ Documentation Complete', purpose: 'Completed activities' }
-            ];
-            
-            for (const column of columns) {
-              await github.rest.projects.createColumn({
-                project_id: project.data.id,
-                name: column.name
-              });
-              console.log(`Created column: ${column.name}`);
-            }
+            console.log('Setting up co-design project for: ${{ github.event.inputs.solution_name }}');
             
             // Create initial issues
             const initialIssues = [
               {
-                title: `[SETUP] Stakeholder Identification and Mapping`,
+                title: `[SETUP] Stakeholder Identification and Mapping - ${{ github.event.inputs.solution_name }}`,
                 body: `## Stakeholder Identification for ${{ github.event.inputs.solution_name }}
-                
+
+**Project Phase:** ${{ github.event.inputs.project_phase }}
+
 Use this issue to identify and map stakeholders for your co-design process.
 
-### Tasks:
+### 📋 Tasks:
 - [ ] Review assessment interview participants
 - [ ] Research additional potential stakeholders  
 - [ ] Complete stakeholder mapping template
-- [ ] Prioritize stakeholders by engagement level
+- [ ] Prioritize stakeholders by engagement level (High/Medium/Low)
 - [ ] Update stakeholder contact information
+- [ ] Identify champions and technical contacts
 
-### Resources:
-- Stakeholder Map Template: /stakeholders/STAKEHOLDER-MAP.md
-- Assessment Data: [Link to assessment documents]
-- Touchpoint Reference: /docs/TOUCHPOINT-REFERENCE.md
+### 📚 Resources:
+- **Stakeholder Map Template:** [/stakeholders/STAKEHOLDER-MAP.md](./stakeholders/STAKEHOLDER-MAP.md)
+- **Touchpoint Reference:** [/docs/TOUCHPOINT-REFERENCE.md](./docs/TOUCHPOINT-REFERENCE.md)
+- **Assessment Data:** [Link to your assessment documents]
 
-### Next Steps:
-After completing stakeholder mapping, create your first touchpoint planning issue.`,
+### 🎯 Success Criteria:
+- [ ] Complete stakeholder database with 10+ potential participants
+- [ ] Stakeholders prioritized by engagement level and LoS scores
+- [ ] Contact information verified and current
+- [ ] Key champions identified for solution advocacy
+
+### ⏭️ Next Steps:
+After completing stakeholder mapping:
+1. Create Touchpoint 1 planning issue using the template
+2. Plan Working Session 1 with your implementation team
+3. Begin outreach to high-priority stakeholders
+
+**Need help?** Check the [Co-Design Guide](./docs/CODESIGN-GUIDE.md) or contact the SEP team.`,
                 labels: ['stakeholder-mapping', 'setup', 'high-priority']
               },
               {
                 title: `[TOUCHPOINT] TP1: Solution Introduction - ${{ github.event.inputs.solution_name }}`,
                 body: `## Touchpoint 1: Solution Introduction
-                
-**Target Date:** [Set based on project timeline]
-**Phase:** ${{ github.event.inputs.project_phase }}
 
-### Objectives:
+**Solution:** ${{ github.event.inputs.solution_name }}  
+**Project Phase:** ${{ github.event.inputs.project_phase }}  
+**Target Date:** [Set based on your project timeline]
+
+### 🎯 Objectives:
 - Introduce ${{ github.event.inputs.solution_name }} solution to assessment stakeholders
-- Invite stakeholders to participate in co-design
-- Assess initial interest and availability
-- Identify champions and technical contacts
+- Invite stakeholders to participate in co-design process
+- Assess initial interest and availability for ongoing engagement
+- Identify champions and key technical contacts
 
-### Preparation Needed:
-- [ ] Review assessment interview notes
-- [ ] Prepare solution summary (1-2 pages)
+### 👥 Target Stakeholders:
+- Assessment interview participants for this solution
+- Survey submitters with relevant needs
+- Additional stakeholders from research
+- Key decision makers and technical experts
+
+### 📝 Preparation Needed:
+- [ ] Review assessment interview notes and stakeholder needs
+- [ ] Prepare 1-2 page solution summary and benefits
 - [ ] Update stakeholder contact information
-- [ ] Customize email template
-- [ ] Coordinate with SEP team
+- [ ] Customize email template with solution-specific details
+- [ ] Coordinate with SEP Co-Design team on approach
+- [ ] Set response deadline (typically 2 weeks)
 
-### Templates to Use:
-- Email: /templates/communications/touchpoint-emails/touchpoint-1-introduction.md
-- Solution Overview: /templates/presentations/solution-overview.md
+### 📧 Templates to Use:
+- **Email Template:** [/templates/communications/touchpoint-emails/touchpoint-1-introduction.md](./templates/communications/touchpoint-emails/touchpoint-1-introduction.md)
+- **Solution Overview:** Create 1-2 page summary document
+- **Follow-up Email:** For non-respondents after 1 week
 
-### Success Criteria:
-- [ ] 70%+ stakeholder response rate
-- [ ] 3-5 stakeholders express co-design interest
-- [ ] Key contacts and champions identified
-- [ ] No major objections to solution approach
+### ✅ Success Criteria:
+- [ ] 70%+ of contacted stakeholders respond
+- [ ] 3-5 stakeholders express interest in co-design participation
+- [ ] Key technical contacts and champions identified
+- [ ] No major objections or concerns raised about solution approach
+- [ ] Clear understanding of stakeholder availability and constraints
 
-**Next:** Plan Working Session 1 based on stakeholder responses.`,
-                labels: ['touchpoint', 'planning', 'touchpoint-1']
+### 📊 Tracking:
+- **Emails Sent:** [Number] on [Date]
+- **Responses Received:** [Number] ([Percentage]%)
+- **Interested in Co-Design:** [Number]
+- **Champions Identified:** [Names and agencies]
+
+### ⏭️ Next Steps:
+Based on stakeholder responses:
+1. **Plan Working Session 1** with interested stakeholders
+2. **Create Touchpoint 4 planning issue** for deeper engagement
+3. **Update stakeholder map** with response and interest levels
+4. **Schedule follow-up calls** with high-priority interested stakeholders
+
+**Need help with stakeholder communication?** Contact the SEP Co-Design team.`,
+                labels: ['touchpoint', 'planning', 'touchpoint-1', 'high-priority']
+              },
+              {
+                title: `✅ Co-Design Setup Complete for ${{ github.event.inputs.solution_name }}`,
+                body: `# 🎉 Co-Design Setup Complete!
+
+Your co-design workspace for **${{ github.event.inputs.solution_name }}** is ready to use.
+
+## 📋 What Was Created:
+- ✅ **Stakeholder Identification Issue** - Start here to map your stakeholders
+- ✅ **Touchpoint 1 Planning Issue** - Plan your first stakeholder communication
+- ✅ **Complete Documentation** - All guides and templates ready to use
+- ✅ **Repository Structure** - Organized folders for templates and tracking
+
+## 🚀 Next Steps (Start Here):
+
+### 1. **Complete Stakeholder Mapping** (This Week)
+- Review the stakeholder identification issue above
+- Fill out the stakeholder map template: [/stakeholders/STAKEHOLDER-MAP.md](./stakeholders/STAKEHOLDER-MAP.md)
+- Prioritize stakeholders by engagement level and solution benefit
+
+### 2. **Plan Touchpoint 1** (Next 1-2 Weeks)  
+- Review the Touchpoint 1 planning issue above
+- Customize the email template with your solution details
+- Set your target date for stakeholder outreach
+
+### 3. **Set Up Project Board** (Optional but Recommended)
+- Go to **"Projects"** tab → **"New project"** → **"Board"**
+- Follow the setup guide: [/docs/PROJECT-BOARD-SETUP.md](./docs/PROJECT-BOARD-SETUP.md)
+- Organize these issues in your visual pipeline
+
+### 4. **Review Documentation**
+- **Complete Co-Design Guide:** [/docs/CODESIGN-GUIDE.md](./docs/CODESIGN-GUIDE.md) *(Coming soon)*
+- **Touchpoint Reference:** [/docs/TOUCHPOINT-REFERENCE.md](./docs/TOUCHPOINT-REFERENCE.md) *(Coming soon)*
+- **Communication Templates:** [/templates/communications/](./templates/communications/)
+
+## 📞 Getting Help:
+
+### **For Co-Design Process Questions:**
+- Contact SEP Co-Design Team: [Add contact info]
+- Review documentation in /docs/ folder
+- Use issue templates for structured planning
+
+### **For Technical/Repository Questions:**
+- Create an issue in this repository
+- Check GitHub's documentation for project boards
+- Contact your implementation team lead
+
+## 🎯 Timeline Guidance:
+
+**This Week:**
+- Complete stakeholder identification and mapping
+- Review assessment data and solution scope
+- Plan Touchpoint 1 approach and timeline
+
+**Next 2-4 Weeks:**
+- Execute Touchpoint 1 (Solution Introduction)
+- Plan and schedule Working Session 1
+- Begin regular stakeholder engagement
+
+**Ongoing:**
+- Follow the 8-touchpoint co-design process
+- Maintain regular stakeholder communication
+- Document feedback and adjust approach as needed
+
+---
+
+## 📊 Project Status:
+- **Solution:** ${{ github.event.inputs.solution_name }}
+- **Phase:** ${{ github.event.inputs.project_phase }}
+- **Setup Date:** $(date +%Y-%m-%d)
+- **Co-Design Status:** Ready to Begin
+
+**Ready to start co-designing?** Begin with the stakeholder identification issue above!
+
+---
+*This setup was automated using the SNWG Co-Design Repository Template. You can create additional issues using the templates in .github/ISSUE_TEMPLATES/ as needed.*`,
+                labels: ['setup-complete', 'information', 'high-priority']
               }
             ];
             
-            for (const issue of initialIssues) {
-              const createdIssue = await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: issue.title,
-                body: issue.body,
-                labels: issue.labels
-              });
-              console.log(`Created issue: ${createdIssue.data.title}`);
+            // Create each issue
+            for (const [index, issue] of initialIssues.entries()) {
+              try {
+                const createdIssue = await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: issue.title,
+                  body: issue.body,
+                  labels: issue.labels
+                });
+                console.log(`✅ Created issue ${index + 1}: ${createdIssue.data.title}`);
+              } catch (error) {
+                console.error(`❌ Failed to create issue ${index + 1}:`, error.message);
+              }
             }
             
-            // Create summary comment
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `🎉 Co-Design Setup Complete for ${{ github.event.inputs.solution_name }}`,
-              body: `## Setup Complete! 
-              
-Your co-design project board and initial issues have been created.
-
-### What was created:
-- ✅ Project board: "${projectName}"
-- ✅ 5 organized columns for co-design pipeline
-- ✅ Initial stakeholder mapping issue
-- ✅ Touchpoint 1 planning issue
-
-### Next Steps:
-1. **Visit your project board** to see the visual pipeline
-2. **Complete stakeholder mapping** using the created issue
-3. **Plan Touchpoint 1** based on your project timeline
-4. **Review documentation** in /docs/ folder
-
-### Resources:
-- Project Board Setup Guide: /docs/PROJECT-BOARD-SETUP.md  
-- Touchpoint Reference: /docs/TOUCHPOINT-REFERENCE.md
-- Co-Design Guide: /docs/CODESIGN-GUIDE.md
-
-**Need help?** Contact the SEP Co-Design team or check the documentation.
-
----
-*This setup was automated. You can manually create additional issues using the templates in .github/ISSUE_TEMPLATES/*`,
-              labels: ['setup-complete', 'information']
-            });
-            
-            // Output project URL for easy access
-            console.log(`\n🎉 Setup complete!`);
-            console.log(`Project URL: ${project.data.html_url}`);
-            console.log(`Repository: https://github.com/${context.repo.owner}/${context.repo.repo}`);
+            console.log(`\n🎉 Setup complete for ${{ github.event.inputs.solution_name }}!`);
+            console.log(`📋 Check the Issues tab to see your new co-design issues.`);
+            console.log(`📚 Review documentation in the /docs/ folder for next steps.`);
+            console.log(`🚀 Ready to begin co-design process!`);
