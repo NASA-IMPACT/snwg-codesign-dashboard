@@ -1,230 +1,184 @@
-# .github/ISSUE_TEMPLATES/touchpoint-planning.yml
-
+---
 name: 🤝 Touchpoint Planning
-description: Plan and execute co-design touchpoints with stakeholders
-title: "[TOUCHPOINT] TP#: [Touchpoint Name] - Due [Date]"
-labels: ["touchpoint", "planning", "stakeholder-engagement"]
-projects: ["Co-Design Pipeline"]
-assignees: []
-body:
-  - type: markdown
-    attributes:
-      value: |
-        ## About Touchpoint Planning
-        
-        Use this template to plan and track any of the 8 co-design touchpoints. Each touchpoint represents a structured interaction with stakeholders to gather input, provide updates, or make decisions together.
-        
-        **📋 Before you start:** Review the Touchpoint Reference Guide in `/docs/TOUCHPOINT-REFERENCE.md` for detailed guidance on each touchpoint.
+about: Plan and execute stakeholder touchpoints in the co-design process
+title: '[TOUCHPOINT] [Project Name] - [Touchpoint Name]'
+labels: ['touchpoint', 'stakeholder-engagement', 'planning']
+assignees: ['co-design-lead']
+---
 
-  - type: dropdown
-    id: touchpoint_number
-    attributes:
-      label: "Which Touchpoint?"
-      description: "Select the touchpoint you're planning"
-      options:
-        - "Touchpoint 1: Solution Introduction (Assessment → Implementation)"
-        - "Touchpoint 2: Agency Feedback Survey (Post-Assessment)" 
-        - "Touchpoint 3: Solution Validation (Assessment → Pre-Formulation)"
-        - "Touchpoint 4: Outreach and Screening (Pre-Formulation)"
-        - "Touchpoint 5: Requirements Gathering Meeting (Pre-Formulation)"
-        - "Touchpoint 6: Iterative Co-Design (Implementation)"
-        - "Touchpoint 7: Solution Launch & Training (Implementation → Operations)"
-        - "Touchpoint 8: Transition/Closeout (Operations → Closeout)"
-        - "Custom Touchpoint"
-    validations:
-      required: true
+## 🤝 Touchpoint: [Touchpoint Name]
 
-  - type: input
-    id: target_date
-    attributes:
-      label: "Target Completion Date"
-      description: "When should this touchpoint be completed?"
-      placeholder: "YYYY-MM-DD"
-    validations:
-      required: true
+**Project:** [Solution Project Name]  
+**Touchpoint Type:** [Select One: Solution Validation | Agency Feedback Survey | Solution Intro | Outreach & Screening | Requirements Verification | Interactive Co-Design | Solution Launch/Training | Transition/Closeout]  
+**Phase:** [Assessment | Pre-Formulation | Formulation | Implementation | Operations]  
+**Timeline:** [Target Date/Date Range]  
 
-  - type: input
-    id: lead_time
-    attributes:
-      label: "Lead Time Required"
-      description: "How much advance notice do stakeholders need?"
-      placeholder: "e.g., 2 weeks"
-      value: "2 weeks"
+---
 
-  - type: dropdown
-    id: project_phase
-    attributes:
-      label: "Current Project Phase"
-      description: "What phase is your solution project in?"
-      options:
-        - "Assessment"
-        - "Pre-Formulation (Months 1-12)"
-        - "Formulation (Year 2)"
-        - "Implementation (Years 3-4)"
-        - "Operations (Year 5+)"
-    validations:
-      required: true
+### 📊 Stakeholder Information
 
-  - type: textarea
-    id: objectives
-    attributes:
-      label: "Touchpoint Objectives"
-      description: "What specific outcomes do you want to achieve?"
-      placeholder: |
-        - Objective 1: [e.g., Introduce solution concept to stakeholders]
-        - Objective 2: [e.g., Gather initial feedback on approach]
-        - Objective 3: [e.g., Identify key champions and technical contacts]
-        - Objective 4: [e.g., Assess stakeholder availability for co-design]
-      value: |
-        - Objective 1: 
-        - Objective 2: 
-        - Objective 3: 
-    validations:
-      required: true
+**Primary Agencies:**
+- [ ] [Agency Name] - [Contact Name, Role, Email]
+- [ ] [Agency Name] - [Contact Name, Role, Email]
 
-  - type: checkboxes
-    id: stakeholder_groups
-    attributes:
-      label: "Target Stakeholder Groups"
-      description: "Which stakeholder groups will participate? (Check all that apply)"
-      options:
-        - label: "High Priority Stakeholders (actively engaged, high LoS)"
-        - label: "Medium Priority Stakeholders (interested, moderate LoS)"
-        - label: "Technical Contacts (implementation support)"
-        - label: "Decision Makers/Management (approval authority)"
-        - label: "End Users (will use the solution operationally)"
-        - label: "Champions (solution advocates within agencies)"
-        - label: "Assessment Interview Participants"
+**Stakeholder Roles Represented:**
+- [ ] Agency Rep/Lead (Management level)
+- [ ] IT/Data Support Person  
+- [ ] Operational End User/Decision Maker
+- [ ] Other: [Specify]
 
-  - type: dropdown
-    id: engagement_method
-    attributes:
-      label: "Primary Engagement Method"
-      description: "How will you conduct this touchpoint?"
-      options:
-        - "Email Communication (surveys, updates, requests)"
-        - "Individual Stakeholder Meetings (1:1 or small groups)"
-        - "Group Workshop/Meeting (multiple stakeholders)"
-        - "Working Session (internal team + key stakeholders)"
-        - "Survey/Feedback Form (structured data collection)"
-        - "Presentation/Demo (show progress, get feedback)"
-        - "Hybrid Approach (multiple methods)"
-    validations:
-      required: true
+**Expected Participation:** [Number] stakeholders
 
-  - type: textarea
-    id: stakeholder_list
-    attributes:
-      label: "Specific Stakeholders to Contact"
-      description: "List the specific people/agencies you'll engage (refer to your stakeholder map)"
-      placeholder: |
-        - [Name] ([Agency]) - [Role] - [Priority Level]
-        - Chris Cole (DOI/BLM) - Co-design POC - High
-        - Doug Newcomb (DOI/FWS) - Assessment Interviewee - High
-        - Martha Anderson (USDA/ARS) - Technical Contact - Medium
+---
 
-  - type: textarea
-    id: preparation_needed
-    attributes:
-      label: "Preparation Required"
-      description: "What needs to be prepared before executing this touchpoint?"
-      placeholder: |
-        - [ ] Review stakeholder map and priorities
-        - [ ] Prepare email templates (check /templates/communications/)
-        - [ ] Create meeting materials or presentation
-        - [ ] Update solution status/progress summary
-        - [ ] Coordinate with SEP team if needed
-        - [ ] Schedule meetings or send communications
-        - [ ] Prepare feedback collection mechanism
-      value: |
-        - [ ] Review stakeholder map and contact information
-        - [ ] 
-        - [ ] 
-        - [ ] 
+### 🎯 Objectives & Outcomes
 
-  - type: textarea
-    id: resources_templates
-    attributes:
-      label: "Templates and Resources to Use"
-      description: "Which templates will you use? (Link to files in this repository)"
-      placeholder: |
-        - Email template: /templates/communications/touchpoint-X-email.md
-        - Meeting agenda: /templates/meeting-agendas/
-        - Feedback form: /templates/feedback-forms/
-        - Presentation template: /templates/presentations/
-      value: |
-        - Email template: 
-        - Meeting materials: 
-        - Feedback collection: 
+**Primary Objectives:**
+- [ ] [Objective 1 - Be specific and measurable]
+- [ ] [Objective 2 - Be specific and measurable]
+- [ ] [Objective 3 - Be specific and measurable]
 
-  - type: textarea
-    id: success_criteria
-    attributes:
-      label: "Success Criteria"
-      description: "How will you know this touchpoint was successful?"
-      placeholder: |
-        - X% of targeted stakeholders respond/participate
-        - Specific feedback received on [topic]
-        - Key stakeholders confirm continued engagement
-        - Requirements/preferences documented
-        - Next steps identified and agreed upon
-      value: |
-        - 
-        - 
-        - 
+**Success Criteria:**
+- [ ] [What success looks like for this touchpoint]
+- [ ] [Measurable outcome or deliverable]
 
-  - type: input
-    id: budget_impact
-    attributes:
-      label: "Budget Impact"
-      description: "Any costs associated with this touchpoint? (travel, materials, etc.)"
-      placeholder: "e.g., $500 for travel, $200 for materials, or 'None'"
+**Stakeholder Value Proposition:**
+**What agencies gain:** [Clear benefit statement - how this helps their mission]  
+**Time commitment:** [Realistic expectation - meeting duration, prep time, etc.]  
+**Impact on their workflow:** [How this touchpoint affects their day-to-day operations]
 
-  - type: checkboxes
-    id: coordination_needed
-    attributes:
-      label: "Coordination Required"
-      description: "Who else needs to be involved or informed?"
-      options:
-        - label: "SEP Co-Design Team (for guidance or support)"
-        - label: "SNWG MO (for coordination or approval)"
-        - label: "Implementation Team Members (for technical input)"
-        - label: "NASA HQ Program Scientist (for oversight)"
-        - label: "Other Solution Projects (for shared stakeholders)"
+---
 
-  - type: textarea
-    id: follow_up_plan
-    attributes:
-      label: "Follow-up Plan"
-      description: "What will you do after this touchpoint is completed?"
-      placeholder: |
-        - [ ] Compile and analyze feedback received
-        - [ ] Update stakeholder map with new information
-        - [ ] Create summary report of outcomes
-        - [ ] Plan next touchpoint or working session
-        - [ ] Update project timeline based on feedback
-        - [ ] Communicate outcomes to team and SEP
-      value: |
-        - [ ] 
-        - [ ] 
-        - [ ] 
+### 📋 Preparation Checklist
 
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        
-        ## 📋 Next Steps After Creating This Issue
-        
-        1. **Review Documentation**: Check `/docs/TOUCHPOINT-REFERENCE.md` for specific guidance on your chosen touchpoint
-        2. **Prepare Materials**: Use templates in `/templates/communications/` folder
-        3. **Update Project Board**: Move this issue to "Active Engagement" when you start execution
-        4. **Track Progress**: Update this issue with progress notes and outcomes
-        5. **Document Results**: Create a follow-up issue for feedback integration
-        
-        ## 📞 Need Help?
-        
-        - **Co-Design Guidance**: Contact SEP Co-Design Team
-        - **Stakeholder Questions**: Review `/stakeholders/STAKEHOLDER-MAP.md`
-        - **Templates**: Check `/templates/` folder for email templates and agendas
-        - **Process Questions**: See `/docs/CODESIGN-GUIDE.md`
+**Pre-Touchpoint Activities:**
+- [ ] Stakeholder contact list updated and verified
+- [ ] Meeting materials prepared ([List specific materials needed])
+- [ ] Agenda drafted and reviewed with SEP team
+- [ ] Technology/platform tested (Zoom, Teams, etc.)
+- [ ] Background materials sent to stakeholders ([X] days in advance)
+- [ ] Calendar invitations sent with clear agenda
+- [ ] Internal team briefed on objectives and roles
+
+**Materials to Prepare:**
+- [ ] Presentation slides (agency-friendly, non-technical language)
+- [ ] Solution demonstration or prototype (if applicable)
+- [ ] Feedback collection form or survey
+- [ ] Reference documents: [List any relevant docs]
+- [ ] Contact information and emergency backup plans
+
+---
+
+### 📅 Execution Plan
+
+**Meeting Structure:**
+1. **Introduction & Context** ([X] minutes)
+   - Welcome and introductions
+   - Meeting objectives and agenda overview
+   - Background on solution and current status
+
+2. **Main Content** ([X] minutes)
+   - [Specific agenda item 1]
+   - [Specific agenda item 2]
+   - [Specific agenda item 3]
+
+3. **Feedback & Discussion** ([X] minutes)
+   - Structured feedback collection
+   - Q&A session
+   - Clarification of next steps
+
+4. **Wrap-up & Next Steps** ([X] minutes)
+   - Summary of key outcomes
+   - Action items assignment
+   - Next touchpoint scheduling
+
+**Key Questions to Address:**
+- [ ] [Question 1 that directly impacts solution development]
+- [ ] [Question 2 that validates current approach]
+- [ ] [Question 3 that identifies potential issues]
+
+---
+
+### 📊 Communication Strategy
+
+**Before the Touchpoint:**
+- [ ] Initial invitation email sent ([Date])
+- [ ] Reminder email sent ([Date])
+- [ ] Background materials distributed ([Date])
+
+**During the Touchpoint:**
+- [ ] Meeting facilitated and recorded (with permission)
+- [ ] Action items captured in real-time
+- [ ] Key quotes and feedback documented
+
+**After the Touchpoint:**
+- [ ] Thank you email sent within 24 hours
+- [ ] Meeting summary distributed within 48 hours
+- [ ] Action items assigned and tracked
+- [ ] Feedback integrated into solution planning
+
+---
+
+### 📈 Outcomes & Results
+
+**[To be completed after touchpoint execution]**
+
+**Participation:**
+- Agencies represented: [List]
+- Total attendees: [Number]
+- Response rate: [Percentage]
+
+**Key Outcomes:**
+- [ ] [Outcome 1 achieved/not achieved]
+- [ ] [Outcome 2 achieved/not achieved]
+- [ ] [Outcome 3 achieved/not achieved]
+
+**Stakeholder Feedback Summary:**
+- **Positive feedback:** [Summary of what's working well]
+- **Concerns raised:** [Issues or challenges identified]
+- **Suggestions for improvement:** [Stakeholder recommendations]
+
+**Action Items Generated:**
+- [ ] [Action Item 1] - Assigned to: [Name] - Due: [Date]
+- [ ] [Action Item 2] - Assigned to: [Name] - Due: [Date]
+- [ ] [Action Item 3] - Assigned to: [Name] - Due: [Date]
+
+**Impact on Solution Development:**
+- [How this touchpoint changed or validated the solution approach]
+- [Any adjustments made based on stakeholder input]
+
+---
+
+### 🔄 Next Steps
+
+**Immediate Actions (Next 1-2 weeks):**
+- [ ] [Immediate follow-up action]
+- [ ] [Document updates needed]
+- [ ] [Stakeholder communications]
+
+**Next Touchpoint:**
+- **Type:** [Next touchpoint in sequence]
+- **Target Date:** [Date]
+- **Key Focus:** [What the next touchpoint will accomplish]
+
+**Dependencies:**
+- [ ] [External dependency 1]
+- [ ] [Internal dependency 1]
+
+---
+
+### 📎 Resources & Links
+
+**Meeting Materials:**
+- [Link to presentation slides]
+- [Link to demo or prototype]
+- [Link to feedback survey]
+
+**Documentation:**
+- [Link to meeting recording]
+- [Link to detailed notes]
+- [Link to stakeholder contact list]
+
+**Related Issues:**
+- Closes #[number] (if this touchpoint completes a planning issue)
+- Related to #[number] (if connected to other touchpoints)
