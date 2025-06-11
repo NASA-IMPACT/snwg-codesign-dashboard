@@ -136,84 +136,109 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: requirements_table
+  - type: input
+    id: spatial_resolution
     attributes:
-      label: Requirements & Specifications
-      description: |
-        Fill out requirements using the table format below:
-        
-        | Characteristic | Optimal/Ideal | Suboptimal/Tolerable | Outside Solution Specs? |
-        |---|---|---|---|
-        | Spatial resolution | | | [ ] |
-        | Minimum detectable feature size | | | [ ] |
-        | Temporal resolution | | | [ ] |
-        | Latency | | | [ ] |
-        | Geographic coverage/region | | | [ ] |
-        | Data Level | | | [ ] |
-        | Data Formats | | | [ ] |
-        | Data Delivery Mechanisms | | | [ ] |
-        | Additional data services | | | [ ] |
-        | Training requirements | | | [ ] |
-        | Other | | | [ ] |
-      placeholder: |
-        | Characteristic | Optimal/Ideal | Suboptimal/Tolerable | Outside Solution Specs? |
-        |---|---|---|---|
-        | Geographic coverage/region | CONUS, incl Alaska | | [ ] |
-        | Data Delivery Mechanisms | ESRI, GEE (if latency is worked out) | | [ ] |
-        | Additional data services | LANCE has mechanism for getting into ESRI Living Atlas | | [ ] |
-        | Training requirements | ARSET | | [ ] |
+      label: Spatial Resolution
+      description: Optimal / Tolerable requirements
+      placeholder: "e.g., 30m / 100m"
     validations:
       required: false
 
-- type: input
-  id: spatial_resolution_optimal
-  attributes:
-    label: Spatial Resolution (Optimal)
-    placeholder: "e.g., 30m"
+  - type: input
+    id: min_detectable_features
+    attributes:
+      label: Minimum width or area of detectable features
+      placeholder: "e.g., 0.5 hectare minimum fire scars"
+    validations:
+      required: false
 
-- type: input
-  id: spatial_resolution_tolerable
-  attributes:
-    label: Spatial Resolution (Tolerable)
-    placeholder: "e.g., 100m"
+  - type: input
+    id: temporal_resolution
+    attributes:
+      label: Temporal Resolution
+      placeholder: "e.g., Daily, Weekly, Monthly"
+    validations:
+      required: false
 
-- type: input
-  id: geographic_coverage
-  attributes:
-    label: Geographic Coverage
-    placeholder: "e.g., CONUS, incl Alaska"
+  - type: input
+    id: latency
+    attributes:
+      label: Latency
+      placeholder: "e.g., Near real-time, < 1 day, < 1 week"
+    validations:
+      required: false
 
-- type: input
-  id: data_delivery_mechanisms
-  attributes:
-    label: Data Delivery Mechanisms
-    placeholder: "e.g., ESRI, GEE"
+  - type: input
+    id: geographic_coverage
+    attributes:
+      label: Geographical coverage/region
+      placeholder: "e.g., CONUS, Global, Specific states"
+    validations:
+      required: false
 
+  - type: input
+    id: data_level
+    attributes:
+      label: Data Level
+      placeholder: "e.g., L1, L2, L3, Analysis Ready"
+    validations:
+      required: false
 
-- type: textarea
-  id: technical_requirements
-  attributes:
-    label: Technical Requirements
-    description: List key technical requirements
-    placeholder: |
-      Spatial Resolution: [Optimal] / [Tolerable]
-      Geographic Coverage: CONUS, incl Alaska
-      Data Delivery: ESRI, GEE (if latency worked out)
-      Training: ARSET
+  - type: input
+    id: data_formats
+    attributes:
+      label: Data Formats
+      placeholder: "e.g., GeoTIFF, NetCDF, Shapefile"
+    validations:
+      required: false
 
-- type: checkboxes
-  id: requirements_outside_specs
-  attributes:
-    label: Requirements Outside Solution Specs
-    description: Check any requirements that fall outside current solution specifications
-    options:
-      - label: Spatial resolution requirements
-      - label: Temporal resolution requirements  
-      - label: Geographic coverage requirements
-      - label: Data delivery mechanism requirements
-      - label: Other requirements (specify in notes)
+  - type: input
+    id: delivery_mechanisms
+    attributes:
+      label: Data Delivery Mechanisms
+      placeholder: "e.g., ESRI, GEE, API, FTP"
+    validations:
+      required: false
 
+  - type: input
+    id: additional_services
+    attributes:
+      label: Additional data services
+      placeholder: "e.g., Visualization tools, alerts"
+    validations:
+      required: false
+
+  - type: input
+    id: training_requirements
+    attributes:
+      label: Training
+      placeholder: "e.g., ARSET, Custom training needed"
+    validations:
+      required: false
+
+  - type: textarea
+    id: other_requirements
+    attributes:
+      label: Other Requirements
+      description: Any additional requirements not covered above
+      placeholder: "Specify any unique requirements..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: requirements_outside_specs
+    attributes:
+      label: Requirements Outside Solution Specs
+      description: Check any requirements that exceed current solution capabilities
+      options:
+        - label: Spatial resolution
+        - label: Temporal resolution
+        - label: Latency requirements
+        - label: Data delivery mechanisms
+        - label: Geographic coverage
+        - label: Additional services
+        - label: Other (specify above)
 
   - type: textarea
     id: barriers
