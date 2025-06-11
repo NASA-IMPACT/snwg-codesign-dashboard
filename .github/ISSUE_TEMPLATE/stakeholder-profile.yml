@@ -165,7 +165,7 @@ body:
         | Training requirements | ARSET | | [ ] |
     validations:
       required: false
----
+
 - type: input
   id: spatial_resolution_optimal
   attributes:
@@ -212,7 +212,7 @@ body:
       - label: Geographic coverage requirements
       - label: Data delivery mechanism requirements
       - label: Other requirements (specify in notes)
-      ---
+
 
   - type: textarea
     id: barriers
