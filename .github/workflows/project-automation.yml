@@ -1,0 +1,68 @@
+name: Project Board Automation
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened]
+  pull_request:
+    types: [opened, edited, labeled, unlabeled, closed, merged]
+
+jobs:
+  update_project:
+    runs-on: ubuntu-latest
+    name: Update Project Board
+    steps:
+      - name: Move touchpoint issues to Active Engagement
+        if: contains(github.event.issue.labels.*.name, 'touchpoint')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Active Stakeholder Engagement
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move working sessions to Active Engagement
+        if: contains(github.event.issue.labels.*.name, 'working-session')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Active Stakeholder Engagement
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move agency-ready items to Stakeholder Review
+        if: contains(github.event.issue.labels.*.name, '🟢 agency-ready')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Stakeholder Review
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move decision-needed items to Stakeholder Review
+        if: contains(github.event.issue.labels.*.name, '🟠 decision-needed')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Stakeholder Review
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move development items to In Development
+        if: contains(github.event.issue.labels.*.name, '🟡 in-development')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: In Development
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move blocked items back to Planning
+        if: contains(github.event.issue.labels.*.name, '🔴 blocked-external')
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Planning & Preparation
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move closed issues to Complete
+        if: github.event.action == 'closed'
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Co-Design Pipeline
+          column: Complete
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
