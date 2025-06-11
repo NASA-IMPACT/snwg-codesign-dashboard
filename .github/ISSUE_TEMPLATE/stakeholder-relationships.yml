@@ -1,0 +1,139 @@
+name: 🤝 Strategic Stakeholder Relationships
+description: Manage strategic partnerships, agency relationships, and executive-level stakeholder engagement
+title: "🤝 STAKEHOLDER: [Strategic Relationship Focus]"
+labels: ["stakeholder-relationships", "executive-dashboard", "strategic-partnerships"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Strategic Stakeholder Relationship Management
+        Address strategic partnerships, agency relationships, and executive-level stakeholder engagement that affects program success and multiple solution projects.
+
+  - type: input
+    id: relationship_focus
+    attributes:
+      label: Strategic Relationship Focus
+      description: Brief title describing the strategic stakeholder relationship
+      placeholder: "NOAA Strategic Partnership Development for Earth Science Solutions"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stakeholder_level
+    attributes:
+      label: Strategic Stakeholder Level
+      description: Level of strategic stakeholder relationship
+      options:
+        - Federal Agency Executive Leadership
+        - NASA Center Director Level
+        - International Partnership (Government Level)
+        - Industry/Commercial Strategic Partnership  
+        - Multi-Agency Consortium/Coalition
+        - Academic/Research Institution Leadership
+        - Policy/Regulatory Body Leadership
+        - Congressional/Legislative Stakeholders
+    validations:
+      required: true
+
+  - type: input
+    id: primary_stakeholder
+    attributes:
+      label: Primary Stakeholder Organization(s)
+      description: Name of key strategic stakeholder organization(s)
+      placeholder: "NOAA, EPA, Department of Defense..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: relationship_management_type
+    attributes:
+      label: Strategic Relationship Management Type
+      description: Nature of the strategic relationship management need
+      options:
+        - New Strategic Partnership Development
+        - Existing Partnership Strategic Enhancement
+        - Strategic Partnership Performance Assessment
+        - Cross-Agency Coordination Strategy
+        - Strategic Conflict Resolution/Management
+        - Executive-Level Communication Strategy
+        - Long-term Strategic Partnership Planning
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_context
+    attributes:
+      label: Strategic Relationship Context
+      description: Executive-level context and importance of this relationship
+      placeholder: "Strategic importance to program, past collaboration history, current partnership status..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: program_strategic_value
+    attributes:
+      label: Strategic Value to Program
+      description: Why is this relationship critical to overall program success?
+      placeholder: "Mission alignment, resource access, stakeholder reach, policy influence, technology access..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: mutual_strategic_benefits
+    attributes:
+      label: Mutual Strategic Benefits
+      description: How do both organizations benefit strategically from this relationship?
+      placeholder: "Shared strategic goals, complementary capabilities, cost efficiencies, policy alignment..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: strategic_engagement_activities
+    attributes:
+      label: Strategic Engagement Activities
+      description: Executive-level engagement activities planned or ongoing
+      options:
+        - label: Executive Leadership Meetings/Summits
+        - label: Strategic Memoranda of Understanding
+        - label: Joint Strategic Planning Sessions
+        - label: Shared Resource/Investment Agreements
+        - label: Policy/Regulatory Collaboration
+        - label: Executive Communication Protocols
+        - label: Strategic Review/Assessment Processes
+
+  - type: dropdown
+    id: relationship_strategic_health
+    attributes:
+      label: Strategic Relationship Health
+      description: Overall strategic partnership status
+      options:
+        - Excellent - Strong strategic partnership with clear mutual benefits
+        - Good - Positive relationship with strategic growth potential
+        - Fair - Adequate but requires strategic attention for improvement
+        - Concerning - Strategic challenges requiring executive intervention
+        - Unknown - Requires strategic assessment to determine status
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_action_plan
+    attributes:
+      label: Strategic Action Plan
+      description: Executive-level actions planned for relationship development
+      placeholder: "Executive meetings, strategic agreements, policy coordination, resource commitments..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: executive_involvement_level
+    attributes:
+      label: Required Executive Involvement Level
+      description: What level of executive engagement is needed?
+      options:
+        - NASA HQ Director Level Involvement
+        - Program Manager Executive Attention
+        - Strategic Coordination Team Management
+        - Routine Executive Oversight
+    validations:
+      required: true
