@@ -1,209 +1,249 @@
-## 📚 Implementation Team Lead: Co-Design System Onboarding & Reference Guide
+name: 📚 Implementation Lead Onboarding & Reference
+description: Onboarding checklist and reference guide for implementation team leads
+title: '[ONBOARDING] [Project Name] - Implementation Lead Guide'
+labels: ['onboarding', 'reference-guide', 'high-priority']
+assignees:
+  - implementation-team-lead
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Implementation Team Lead: Co-Design System Onboarding & Reference Guide
 
-**Issue Type:** Onboarding & Reference  
-**Priority:** High  
-**Assigned to:** [Implementation Team Lead Name]  
-**Due Date:** Complete within 2 weeks of project start  
+        **Issue Type:** Onboarding & Reference  
+        **Priority:** High  
+        **Due Date:** Complete within 2 weeks of project start  
 
----
+        ---
 
-### 🎯 **Purpose of This Issue**
+        ### 🎯 **Purpose of This Issue**
 
-**This issue serves as:**
-- [ ] **Your onboarding checklist** - complete the steps to get up to speed
-- [ ] **Learning path tracker** - mark off what you've mastered  
-- [ ] **Quick reference guide** - bookmark this for later when you need reminders
-- [ ] **Success measurement** - you'll know you're ready when all boxes are checked
+        **This issue serves as:**
+        - **Your onboarding checklist** - complete the steps to get up to speed
+        - **Learning path tracker** - mark off what you've mastered  
+        - **Quick reference guide** - bookmark this for later when you need reminders
+        - **Success measurement** - you'll know you're ready when all boxes are checked
 
-**Keep this issue open and refer back to it throughout your project!**
+        **Keep this issue open and refer back to it throughout your project!**
 
----
+  - type: input
+    id: project_name
+    attributes:
+      label: Project Name
+      description: Name of your solution project
+      placeholder: e.g., HLS-LL Data Access Portal
+    validations:
+      required: true
 
-## ✅ **Phase 1: Getting Started (Week 1-2)**
+  - type: input
+    id: team_lead_name
+    attributes:
+      label: Implementation Team Lead Name
+      description: Name of the person responsible for co-design implementation
+      placeholder: e.g., Jane Smith
+    validations:
+      required: true
 
-### **Understand What You Have**
-- [ ] **Toured your project board** - know the 5 columns and what they mean
-- [ ] **Reviewed the 4 starter issues** - understand your initial roadmap
-- [ ] **Located issue templates** - know how to create new touchpoint issues
-- [ ] **Identified your co-design lead** - assigned team member for stakeholder engagement
+  - type: input
+    id: codesign_lead_name
+    attributes:
+      label: Co-Design Lead Name
+      description: Team member assigned as co-design lead
+      placeholder: e.g., John Doe
 
-### **System Setup**
-- [ ] **Customized starter issues** - replaced placeholder text with real project info
-- [ ] **Added real stakeholder contacts** - names, agencies, emails, roles
-- [ ] **Set up notifications** - configured GitHub to email you about important updates
-- [ ] **Shared board URL** with your team - everyone knows where to find project status
+  - type: checkboxes
+    id: phase1_getting_started
+    attributes:
+      label: "✅ Phase 1: Getting Started (Week 1-2)"
+      description: Complete these steps to understand and set up your system
+      options:
+        - label: "**Understand What You Have**"
+        - label: Toured your project board - know the 5 columns and what they mean
+        - label: Reviewed the 4 starter issues - understand your initial roadmap
+        - label: Located issue templates - know how to create new touchpoint issues
+        - label: Identified your co-design lead - assigned team member for stakeholder engagement
+        - label: "**System Setup**"
+        - label: Customized starter issues - replaced placeholder text with real project info
+        - label: Added real stakeholder contacts - names, agencies, emails, roles
+        - label: Set up notifications - configured GitHub to email you about important updates
+        - label: Shared board URL with your team - everyone knows where to find project status
+        - label: "**Team Preparation**"
+        - label: Scheduled CoDesign 101 session - 2-hour training with SEP team
+        - label: Assigned co-design roles - team members know their stakeholder engagement responsibilities
+        - label: Set up communication channels - regular check-ins with SEP team established
 
-### **Team Preparation**
-- [ ] **Scheduled CoDesign 101 session** - 2-hour training with SEP team
-- [ ] **Assigned co-design roles** - team members know their stakeholder engagement responsibilities
-- [ ] **Set up communication channels** - regular check-ins with SEP team established
+  - type: checkboxes
+    id: phase2_first_touchpoint
+    attributes:
+      label: "📋 Phase 2: First Touchpoint Execution (Week 3-4)"
+      description: Execute your first professional stakeholder touchpoint
+      options:
+        - label: "**Create Your First Real Touchpoint Issue**"
+        - label: Used "Touchpoint Planning" template - created issue for first stakeholder meeting
+        - label: Added specific stakeholder information - real agencies, contacts, meeting objectives
+        - label: Followed preparation checklist - completed all pre-meeting tasks
+        - label: Executed the touchpoint - held professional stakeholder meeting
+        - label: "**Document and Track Progress**"
+        - label: Updated touchpoint issue with meeting outcomes and feedback
+        - label: Moved issues between columns - practiced using the board workflow
+        - label: Created action items - assigned follow-up tasks to team members
+        - label: Communicated with stakeholders - sent follow-up emails with next steps
 
----
+  - type: checkboxes
+    id: phase3_ongoing_management
+    attributes:
+      label: "🔄 Phase 3: Ongoing Project Management (Monthly)"
+      description: Master the ongoing project management workflow
+      options:
+        - label: "**Weekly Routine Mastery**"
+        - label: Monday board review - established 15-minute weekly workflow
+        - label: Issue creation habit - comfortable using templates for new touchpoints
+        - label: Column management - naturally moving issues based on work status
+        - label: Stakeholder updates - regularly sharing progress via board URL
+        - label: "**Advanced Usage**"
+        - label: Created milestone issues - tracking major development phases with stakeholder impact
+        - label: Used feedback collection - systematically gathering and analyzing agency input
+        - label: Managed working sessions - coordinating team and SEP collaboration effectively
+        - label: Handled complications - successfully managed stakeholder concerns or project changes
 
-## 📋 **Phase 2: First Touchpoint Execution (Week 3-4)**
+  - type: checkboxes
+    id: phase4_excellence
+    attributes:
+      label: "📊 Phase 4: Stakeholder Communication Excellence (Ongoing)"
+      description: Achieve professional stakeholder engagement excellence
+      options:
+        - label: "**Professional Communication**"
+        - label: Stakeholder email templates - using board status for regular updates
+        - label: Leadership reporting - leveraging board for monthly project reports
+        - label: Agency dashboard sharing - stakeholders actively using board for project visibility
+        - label: Issue-based collaboration - team and stakeholders engaging through GitHub issues
+        - label: "**Full 8-Touchpoint Management**"
+        - label: "Touchpoint 1: Solution Validation - completed and documented"
+        - label: "Touchpoint 2: Agency Feedback Survey - executed stakeholder feedback collection"
+        - label: "Touchpoint 3: Solution Introduction - successfully introduced solution to agencies"
+        - label: "Touchpoint 4: Outreach & Screening - identified champions and key participants"
+        - label: "Touchpoint 5: Requirements Verification - validated requirements with stakeholders"
+        - label: "Touchpoint 6: Interactive Co-Design - engaged agencies in solution design decisions"
+        - label: "Touchpoint 7: Solution Launch/Training - delivered solution with proper training"
+        - label: "Touchpoint 8: Transition/Closeout - successfully transitioned to operations"
 
-### **Create Your First Real Touchpoint Issue**
-- [ ] **Used "Touchpoint Planning" template** - created issue for first stakeholder meeting
-- [ ] **Added specific stakeholder information** - real agencies, contacts, meeting objectives
-- [ ] **Followed preparation checklist** - completed all pre-meeting tasks
-- [ ] **Executed the touchpoint** - held professional stakeholder meeting
+  - type: textarea
+    id: quick_reference
+    attributes:
+      label: "🎯 Quick Reference: Daily Usage"
+      description: "Bookmark this section for quick access to common tasks"
+      value: |
+        ### **When You Need To...**
 
-### **Document and Track Progress**
-- [ ] **Updated touchpoint issue** with meeting outcomes and feedback
-- [ ] **Moved issues between columns** - practiced using the board workflow
-- [ ] **Created action items** - assigned follow-up tasks to team members
-- [ ] **Communicated with stakeholders** - sent follow-up emails with next steps
+        #### **Plan a Stakeholder Meeting:**
+        1. Go to Issues → New Issue → Choose "🤝 Touchpoint Planning"
+        2. Fill in real stakeholder info and meeting objectives
+        3. Follow the preparation checklist in the issue
+        4. Move issue to "Active Stakeholder Engagement" column
 
----
+        #### **Track Development Progress:**
+        1. Create "🚀 Solution Milestone" issue for major development phases
+        2. Update with technical progress and stakeholder impact
+        3. Move between "In Development" and "Stakeholder Review" as appropriate
+        4. Close when milestone is complete
 
-## 🔄 **Phase 3: Ongoing Project Management (Monthly)**
+        #### **Collect Stakeholder Feedback:**
+        1. Use "📢 Stakeholder Feedback Collection" template
+        2. Document feedback systematically in the issue
+        3. Create action items based on feedback received
+        4. Follow up with stakeholders on changes made
 
-### **Weekly Routine Mastery**
-- [ ] **Monday board review** - established 15-minute weekly workflow
-- [ ] **Issue creation habit** - comfortable using templates for new touchpoints
-- [ ] **Column management** - naturally moving issues based on work status
-- [ ] **Stakeholder updates** - regularly sharing progress via board URL
+        #### **Update Your Team/Leadership:**
+        1. Take screenshot of project board showing current status
+        2. Highlight items in "Stakeholder Review" needing attention
+        3. Point to "Complete" column showing progress
+        4. Share board URL for detailed information
 
-### **Advanced Usage**
-- [ ] **Created milestone issues** - tracking major development phases with stakeholder impact
-- [ ] **Used feedback collection** - systematically gathering and analyzing agency input
-- [ ] **Managed working sessions** - coordinating team and SEP collaboration effectively
-- [ ] **Handled complications** - successfully managed stakeholder concerns or project changes
+  - type: checkboxes
+    id: troubleshooting
+    attributes:
+      label: "🔧 Troubleshooting: When Things Go Wrong"
+      description: Check off issues you've encountered and resolved
+      options:
+        - label: "**Stakeholder Issues**"
+        - label: Non-responsive agencies - escalated to SEP team for guidance
+        - label: Conflicting feedback - documented in issues and sought SEP consultation
+        - label: Schedule conflicts - used issue comments to coordinate alternative times
+        - label: Scope changes - updated relevant issues and communicated with all stakeholders
+        - label: "**Technical Issues**"
+        - label: GitHub permissions - contacted repository admin for access issues
+        - label: Template problems - copied content manually when templates weren't working
+        - label: Board organization - manually dragged issues when automation wasn't working
+        - label: Notification issues - checked GitHub notification settings and email preferences
+        - label: "**Team Coordination Issues**"
+        - label: Role confusion - referred back to CoDesign 101 session outcomes
+        - label: Missed deadlines - used issue due dates and assignees for accountability
+        - label: Communication gaps - ensured all team members are watching relevant issues
+        - label: SEP integration - scheduled regular check-ins with SEP team
 
----
+  - type: checkboxes
+    id: success_indicators
+    attributes:
+      label: "📈 Success Indicators"
+      description: You've mastered this system when you can check these boxes
+      options:
+        - label: "**You've Mastered This System When:**"
+        - label: Stakeholders compliment your professional organization and communication
+        - label: Leadership is impressed with your stakeholder engagement visibility
+        - label: Team operates smoothly without confusion about roles or next steps
+        - label: Nothing falls through cracks - all touchpoints planned and executed
+        - label: SEP team considers you a model for other implementation teams
+        - label: "**Monthly Self-Assessment:**"
+        - label: All planned touchpoints have issues and are progressing on schedule
+        - label: Stakeholder response rate is high and feedback is constructive
+        - label: Project board accurately reflects current project status
+        - label: Team confidence in stakeholder engagement process is high
+        - label: Documentation quality supports project success and future reference
 
-## 📊 **Phase 4: Stakeholder Communication Excellence (Ongoing)**
+  - type: textarea
+    id: getting_help
+    attributes:
+      label: "🆘 Getting Help"
+      description: Resources and contacts for when you need assistance
+      value: |
+        ### **Contact SEP Team When:**
+        - Stakeholder engagement strategy needs adjustment
+        - Agencies aren't responding or seem disengaged  
+        - You need help interpreting feedback or making decisions
+        - Technical issues are affecting stakeholder relationships
+        - You want to discuss lessons learned or process improvements
 
-### **Professional Communication**
-- [ ] **Stakeholder email templates** - using board status for regular updates
-- [ ] **Leadership reporting** - leveraging board for monthly project reports
-- [ ] **Agency dashboard sharing** - stakeholders actively using board for project visibility
-- [ ] **Issue-based collaboration** - team and stakeholders engaging through GitHub issues
+        ### **Use This System to Get Help:**
+        - **Create issues** describing problems you're facing
+        - **Tag SEP team members** (@username) in issue comments
+        - **Move problematic items** to "Stakeholder Review" column
+        - **Document what you've tried** and what's not working
 
-### **Full 8-Touchpoint Management**
-- [ ] **Touchpoint 1: Solution Validation** - completed and documented
-- [ ] **Touchpoint 2: Agency Feedback Survey** - executed stakeholder feedback collection
-- [ ] **Touchpoint 3: Solution Introduction** - successfully introduced solution to agencies
-- [ ] **Touchpoint 4: Outreach & Screening** - identified champions and key participants
-- [ ] **Touchpoint 5: Requirements Verification** - validated requirements with stakeholders
-- [ ] **Touchpoint 6: Interactive Co-Design** - engaged agencies in solution design decisions
-- [ ] **Touchpoint 7: Solution Launch/Training** - delivered solution with proper training
-- [ ] **Touchpoint 8: Transition/Closeout** - successfully transitioned to operations
+  - type: textarea
+    id: bookmark_links
+    attributes:
+      label: "📎 Bookmark Links"
+      description: Quick access links (update with your actual URLs)
+      value: |
+        **Quick Access:**
+        - **[Your Project Board](../../projects)** - Main co-design workflow dashboard
+        - **[Create New Issue](../../issues/new/choose)** - Access all co-design templates
+        - **[View All Issues](../../issues)** - See complete project history
+        - **[Repository Home](../../)** - Access documentation and resources
 
----
+        **SEP Team Resources:**
+        - **[SNWG Co-Design Guide](link-to-guide)** - Full methodology documentation
+        - **[SEP Team Contact](mailto:sep-team@nasa.gov)** - Direct support email
+        - **[Template Repository](link-to-template-repo)** - Source templates for reference
 
-## 🎯 **Quick Reference: Daily Usage**
-
-### **When You Need To...**
-
-#### **Plan a Stakeholder Meeting:**
-1. Go to Issues → New Issue → Choose "🤝 Touchpoint Planning"
-2. Fill in real stakeholder info and meeting objectives
-3. Follow the preparation checklist in the issue
-4. Move issue to "Active Stakeholder Engagement" column
-
-#### **Track Development Progress:**
-1. Create "🚀 Solution Milestone" issue for major development phases
-2. Update with technical progress and stakeholder impact
-3. Move between "In Development" and "Stakeholder Review" as appropriate
-4. Close when milestone is complete
-
-#### **Collect Stakeholder Feedback:**
-1. Use "📢 Stakeholder Feedback Collection" template
-2. Document feedback systematically in the issue
-3. Create action items based on feedback received
-4. Follow up with stakeholders on changes made
-
-#### **Update Your Team/Leadership:**
-1. Take screenshot of project board showing current status
-2. Highlight items in "Stakeholder Review" needing attention
-3. Point to "Complete" column showing progress
-4. Share board URL for detailed information
-
----
-
-## 🔧 **Troubleshooting: When Things Go Wrong**
-
-### **Stakeholder Issues**
-- [ ] **Non-responsive agencies** - escalate to SEP team for guidance
-- [ ] **Conflicting feedback** - document in issues and seek SEP consultation
-- [ ] **Schedule conflicts** - use issue comments to coordinate alternative times
-- [ ] **Scope changes** - update relevant issues and communicate with all stakeholders
-
-### **Technical Issues**
-- [ ] **GitHub permissions** - contact repository admin for access issues
-- [ ] **Template problems** - copy content manually if templates aren't working
-- [ ] **Board organization** - manually drag issues if automation isn't working
-- [ ] **Notification issues** - check GitHub notification settings and email preferences
-
-### **Team Coordination Issues**
-- [ ] **Role confusion** - refer back to CoDesign 101 session outcomes
-- [ ] **Missed deadlines** - use issue due dates and assignees for accountability
-- [ ] **Communication gaps** - ensure all team members are watching relevant issues
-- [ ] **SEP integration** - schedule regular check-ins with SEP team
-
----
-
-## 📈 **Success Indicators**
-
-### **You've Mastered This System When:**
-- [ ] **Stakeholders compliment** your professional organization and communication
-- [ ] **Leadership is impressed** with your stakeholder engagement visibility
-- [ ] **Team operates smoothly** without confusion about roles or next steps
-- [ ] **Nothing falls through cracks** - all touchpoints planned and executed
-- [ ] **SEP team considers you** a model for other implementation teams
-
-### **Monthly Self-Assessment:**
-- [ ] **All planned touchpoints** have issues and are progressing on schedule
-- [ ] **Stakeholder response rate** is high and feedback is constructive
-- [ ] **Project board** accurately reflects current project status
-- [ ] **Team confidence** in stakeholder engagement process is high
-- [ ] **Documentation quality** supports project success and future reference
-
----
-
-## 🆘 **Getting Help**
-
-### **Contact SEP Team When:**
-- Stakeholder engagement strategy needs adjustment
-- Agencies aren't responding or seem disengaged  
-- You need help interpreting feedback or making decisions
-- Technical issues are affecting stakeholder relationships
-- You want to discuss lessons learned or process improvements
-
-### **Use This System to Get Help:**
-- **Create issues** describing problems you're facing
-- **Tag SEP team members** (@username) in issue comments
-- **Move problematic items** to "Stakeholder Review" column
-- **Document what you've tried** and what's not working
-
----
-
-## 🎉 **Completion Celebration**
-
-### **When You've Checked All Boxes Above:**
-- [ ] **Celebrate your expertise!** You're now a co-design system power user
-- [ ] **Share your success** with SEP team and other implementation leads
-- [ ] **Mentor new users** by sharing this issue as a reference
-- [ ] **Contribute improvements** based on your experience using the system
-
----
-
-## 📎 **Bookmark Links**
-
-**Quick Access:**
-- **[Your Project Board](../../projects)** - Main co-design workflow dashboard
-- **[Create New Issue](../../issues/new/choose)** - Access all co-design templates
-- **[View All Issues](../../issues)** - See complete project history
-- **[Repository Home](../../)** - Access documentation and resources
-
-**SEP Team Resources:**
-- **[SNWG Co-Design Guide](link-to-guide)** - Full methodology documentation
-- **[SEP Team Contact](mailto:sep-team@nasa.gov)** - Direct support email
-- **[Template Repository](link-to-template-repo)** - Source templates for reference
-
----
-
-**💡 Pro Tip:** Keep this issue open and pinned for quick reference throughout your project. Update checkboxes as you master each aspect of the co-design system!
-
-**🚀 Ready to deliver professional stakeholder engagement that impresses agencies and leadership!**
+  - type: textarea
+    id: notes_lessons_learned
+    attributes:
+      label: "📝 Notes & Lessons Learned"
+      description: Use this space to document your experience and insights
+      placeholder: |
+        Document your experience using this co-design system:
+        - What worked well for your project?
+        - What challenges did you encounter?
+        - What would you tell other implementation leads?
+        - How could the system be improved?
