@@ -1,0 +1,235 @@
+name: Stakeholder Profile
+description: Track individual stakeholder information and engagement for co-design
+title: '[STAKEHOLDER] [Agency] - [Contact Name] (#[Assessment-ID])'
+labels: ['stakeholder', 'agency-[agency-abbreviation]', 'engagement-could-benefit']
+assignees: []
+body:
+  - type: input
+    id: agency
+    attributes:
+      label: Agency/Organization
+      description: Full agency name and department
+      placeholder: "e.g., DOI/Bureau of Land Management"
+    validations:
+      required: true
+
+  - type: input
+    id: assessment_id
+    attributes:
+      label: Assessment ID
+      description: SNWG Assessment ID number
+      placeholder: "e.g., #2022-257"
+    validations:
+      required: true
+
+  - type: input
+    id: primary_contact
+    attributes:
+      label: Primary Contact Name
+      placeholder: "e.g., Chris Cole"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact Email
+      placeholder: "contact@agency.gov"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contact_role
+    attributes:
+      label: Primary Contact Role
+      description: Role of the primary contact
+      options:
+        - Assessment Interviewee
+        - CoDesign POC
+        - CoDesign Technical Contact
+        - CoDesign Champion
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_reps
+    attributes:
+      label: Additional Representatives
+      description: List other agency representatives and their roles
+      placeholder: |
+        Representative 2: [Name] - [Role]
+        Representative 3: [Name] - [Role]
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: engagement_level
+    attributes:
+      label: Current Engagement Level
+      description: Select current stakeholder engagement ring
+      options:
+        - label: Could Benefit
+        - label: Interested/Stay Informed
+        - label: Information & Feedback
+        - label: Collaborate
+        - label: Primary Co-owners
+
+  - type: dropdown
+    id: codesign_participation
+    attributes:
+      label: Participating in Co-design
+      options:
+        - "Yes"
+        - "No" 
+        - "Undetermined"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: expected_participation
+    attributes:
+      label: Expected Level of Engagement
+      description: What level of engagement do we expect from this stakeholder?
+      options:
+        - "Low: Is interested & wants to be kept informed"
+        - "Medium: Is willing to provide information & feedback"
+        - "High: Wants to collaborate to help shape solution"
+        - "Nirvana: Is exploring some form of co-ownership"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: codesign_priority
+    attributes:
+      label: Co-design Priority
+      description: Priority level for co-design activities
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: input
+    id: los_score
+    attributes:
+      label: LOS (Level of Service) Score
+      description: Current → Expected LOS score
+      placeholder: "e.g., 10→75"
+    validations:
+      required: false
+
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Decision Making
+      description: What decisions does the agency want to make using this solution?
+      placeholder: "e.g., disaster/wildfire response monitoring, larger instances of trespass/disturbance, law enforcement + litigation scenarios"
+    validations:
+      required: false
+
+  - type: textarea
+    id: anticipated_impact
+    attributes:
+      label: Anticipated Impact
+      description: What is the anticipated impact on the stakeholder? What will be enabled or improved?
+    validations:
+      required: false
+
+  - type: textarea
+    id: requirements_table
+    attributes:
+      label: Requirements & Specifications
+      description: |
+        Fill out requirements using the table format below:
+        
+        | Characteristic | Optimal/Ideal | Suboptimal/Tolerable | Outside Solution Specs? |
+        |---|---|---|---|
+        | Spatial resolution | | | [ ] |
+        | Minimum detectable feature size | | | [ ] |
+        | Temporal resolution | | | [ ] |
+        | Latency | | | [ ] |
+        | Geographic coverage/region | | | [ ] |
+        | Data Level | | | [ ] |
+        | Data Formats | | | [ ] |
+        | Data Delivery Mechanisms | | | [ ] |
+        | Additional data services | | | [ ] |
+        | Training requirements | | | [ ] |
+        | Other | | | [ ] |
+      placeholder: |
+        | Characteristic | Optimal/Ideal | Suboptimal/Tolerable | Outside Solution Specs? |
+        |---|---|---|---|
+        | Geographic coverage/region | CONUS, incl Alaska | | [ ] |
+        | Data Delivery Mechanisms | ESRI, GEE (if latency is worked out) | | [ ] |
+        | Additional data services | LANCE has mechanism for getting into ESRI Living Atlas | | [ ] |
+        | Training requirements | ARSET | | [ ] |
+    validations:
+      required: false
+
+  - type: textarea
+    id: barriers
+    attributes:
+      label: Barriers to Adoption
+      description: What are the biggest potential barriers to operational use of this solution?
+      placeholder: "e.g., most of BLM users access ESRI and GEE and tool Chris codeveloped CDET"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Important information not captured above
+      placeholder: "e.g., GEE may nullify the LL capability of HLS-LL. W2w most useful for BLM. If w2w is prohibitively expensive, on-demand would be good for post-fire monitoring."
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested_contacts
+    attributes:
+      label: Suggested Additional Contacts
+      description: Names and roles of other potential stakeholders this contact recommended
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: touchpoint_history
+    attributes:
+      label: Touchpoint History
+      description: Track completed touchpoints
+      options:
+        - label: "Touchpoint 1: Initial contact"
+        - label: "Touchpoint 2: Requirements gathering"
+        - label: "Touchpoint 3: Prototype feedback"
+        - label: "Touchpoint 4: Testing/validation"
+        - label: "Transitional: Handover planning"
+
+  - type: textarea
+    id: touchpoint_notes
+    attributes:
+      label: Notes from Touchpoints
+      description: Links to meeting notes, discussion summaries, etc.
+      placeholder: "Link to 2nd touchpoint discussion notes, meeting summaries, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: action_items
+    attributes:
+      label: Action Items
+      description: Follow-up tasks and next steps
+      placeholder: |
+        - [ ] Action item 1
+        - [ ] Action item 2
+        - [ ] Action item 3
+    validations:
+      required: false
+
+  - type: input
+    id: next_contact
+    attributes:
+      label: Next Scheduled Contact
+      description: Date or milestone for next touchpoint
+      placeholder: "Date/Milestone"
+    validations:
+      required: false
