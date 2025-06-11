@@ -1,0 +1,116 @@
+name: 📊 Resource & Capacity Management
+description: Track strategic resource allocation, capacity planning, and program-wide resource optimization
+title: "📊 RESOURCE: [Strategic Resource/Capacity Issue]"
+labels: ["resource-capacity", "executive-dashboard", "strategic-planning"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Strategic Resource & Capacity Management
+        Address program-wide resource allocation, strategic capacity planning, and executive-level resource optimization across solution projects.
+
+  - type: input
+    id: resource_issue_title
+    attributes:
+      label: Strategic Resource Issue Title
+      description: Brief title describing the strategic resource or capacity issue
+      placeholder: "FY26 Cross-Project Expert Capacity Strategic Planning"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: resource_category
+    attributes:
+      label: Strategic Resource Category
+      description: Type of strategic resource being addressed
+      options:
+        - Program-Wide Budget/Funding
+        - Cross-Project Expert Capacity
+        - Strategic Partnership Resources
+        - Technology Infrastructure/Platforms
+        - Executive Leadership Time/Attention
+        - Multi-Agency Coordination Resources
+        - Program Management Capacity
+        - Strategic Communications Resources
+    validations:
+      required: true
+
+  - type: dropdown
+    id: strategic_issue_type
+    attributes:
+      label: Strategic Issue Type
+      description: Nature of the strategic resource situation
+      options:
+        - Strategic Capacity Constraint/Shortage
+        - Program-Wide Resource Allocation Decision
+        - Cross-Project Resource Optimization
+        - Strategic Capacity Planning/Forecasting
+        - Executive Resource Prioritization
+        - Multi-Project Resource Sharing Opportunity
+        - Strategic Investment/Divestment Decision
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_situation
+    attributes:
+      label: Strategic Resource Situation
+      description: Executive-level description of the resource situation
+      placeholder: "Strategic resource constraints, program-wide implications, executive decision requirements..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: program_impact
+    attributes:
+      label: Program Impact Assessment
+      description: How does this resource situation affect overall program success?
+      placeholder: "Impact on program goals, strategic timeline implications, stakeholder effects, cross-project dependencies..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected_program_areas
+    attributes:
+      label: Affected Program Areas
+      description: Which strategic areas of the program are impacted?
+      options:
+        - label: Multiple Solution Projects (3+ projects)
+        - label: Cross-Agency Partnership Development
+        - label: Strategic Stakeholder Engagement
+        - label: Program Timeline/Milestones
+        - label: Technology Platform Strategy
+        - label: Budget/Financial Planning
+        - label: Executive Leadership/Governance
+
+  - type: textarea
+    id: strategic_options
+    attributes:
+      label: Strategic Options for Executive Consideration
+      description: What strategic approaches could address this resource situation?
+      placeholder: "Resource reallocation strategies, partnership opportunities, technology solutions, organizational changes..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: executive_decision_urgency
+    attributes:
+      label: Executive Decision Urgency
+      description: How quickly do executives need to make decisions?
+      options:
+        - Immediate Executive Decision Required (days/weeks)
+        - Executive Action Needed This Quarter
+        - Strategic Planning for Next Cycle
+        - Long-term Strategic Consideration
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_metrics
+    attributes:
+      label: Strategic Success Metrics
+      description: How will successful resource management be measured at program level?
+      placeholder: "Program performance improvements, cost efficiency gains, strategic goal achievement..."
+    validations:
+      required: true
