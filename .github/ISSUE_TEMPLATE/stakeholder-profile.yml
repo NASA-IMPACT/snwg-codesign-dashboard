@@ -189,7 +189,8 @@ body:
   attributes:
     label: Data Delivery Mechanisms
     placeholder: "e.g., ESRI, GEE"
----
+
+
 - type: textarea
   id: technical_requirements
   attributes:
