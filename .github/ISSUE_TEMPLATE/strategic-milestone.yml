@@ -1,0 +1,117 @@
+name: 🎯 Strategic Milestone
+description: Track program-wide achievements and critical strategic decision points
+title: "🎯 MILESTONE: [Strategic Milestone Name]"
+labels: ["strategic-milestone", "executive-dashboard", "high-priority"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Strategic Milestone Tracking
+        Use this template to track major program achievements, critical decision points, and strategic initiatives across multiple solution projects.
+
+  - type: input
+    id: milestone_name
+    attributes:
+      label: Milestone Name
+      description: Strategic milestone or achievement title
+      placeholder: "Authority to Proceed Decision Gate for Project X"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: milestone_type
+    attributes:
+      label: Milestone Type
+      description: Category of strategic milestone
+      options:
+        - Decision Gate (ATP, KDP, CDR, etc.)
+        - Program Launch/Initiation
+        - Cross-Agency Partnership
+        - Budget/Funding Milestone
+        - Policy/Regulatory Achievement
+        - Technology Demonstration
+        - Strategic Review Complete
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Completion Date
+      description: Expected milestone completion date
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority_level
+    attributes:
+      label: Strategic Priority Level
+      description: Impact level on overall program success
+      options:
+        - Critical - Program success depends on this
+        - High - Significant impact on program goals
+        - Medium - Important but not program-critical
+        - Low - Supporting milestone
+    validations:
+      required: true
+
+  - type: textarea
+    id: milestone_description
+    attributes:
+      label: Milestone Description
+      description: Detailed description of what constitutes milestone completion
+      placeholder: "Clear success criteria and completion definition..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: stakeholder_impact
+    attributes:
+      label: Stakeholder Impact Assessment
+      description: Who is affected and how by this milestone
+      placeholder: "Affected agencies, implementation teams, end users..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies & Prerequisites
+      description: What must be completed before this milestone can be achieved
+      placeholder: "Required approvals, completed activities, resources..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: success_metrics
+    attributes:
+      label: Success Metrics
+      description: How will milestone completion be measured and validated
+      placeholder: "Quantitative and qualitative success indicators..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: risk_factors
+    attributes:
+      label: Risk Factors
+      description: Potential obstacles or risks to milestone achievement
+      placeholder: "Timeline risks, resource constraints, external dependencies..."
+    validation:
+      required: false
+
+  - type: checkboxes
+    id: communication_plan
+    attributes:
+      label: Communication Requirements
+      description: Select all that apply for milestone communication needs
+      options:
+        - label: NASA HQ Leadership Briefing Required
+        - label: Cross-Agency Notification Needed  
+        - label: Stakeholder Community Announcement
+        - label: Implementation Team Coordination
+        - label: Budget/Resource Impact Communication
+        - label: OMB/External Reporting Required
