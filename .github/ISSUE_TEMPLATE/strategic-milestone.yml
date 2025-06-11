@@ -3,6 +3,7 @@ description: Track program-wide achievements and critical strategic decision poi
 title: "🎯 MILESTONE: [Strategic Milestone Name]"
 labels: ["strategic-milestone", "executive-dashboard", "high-priority"]
 assignees: []
+
 body:
   - type: markdown
     attributes:
