@@ -165,6 +165,54 @@ body:
         | Training requirements | ARSET | | [ ] |
     validations:
       required: false
+---
+- type: input
+  id: spatial_resolution_optimal
+  attributes:
+    label: Spatial Resolution (Optimal)
+    placeholder: "e.g., 30m"
+
+- type: input
+  id: spatial_resolution_tolerable
+  attributes:
+    label: Spatial Resolution (Tolerable)
+    placeholder: "e.g., 100m"
+
+- type: input
+  id: geographic_coverage
+  attributes:
+    label: Geographic Coverage
+    placeholder: "e.g., CONUS, incl Alaska"
+
+- type: input
+  id: data_delivery_mechanisms
+  attributes:
+    label: Data Delivery Mechanisms
+    placeholder: "e.g., ESRI, GEE"
+---
+- type: textarea
+  id: technical_requirements
+  attributes:
+    label: Technical Requirements
+    description: List key technical requirements
+    placeholder: |
+      Spatial Resolution: [Optimal] / [Tolerable]
+      Geographic Coverage: CONUS, incl Alaska
+      Data Delivery: ESRI, GEE (if latency worked out)
+      Training: ARSET
+
+- type: checkboxes
+  id: requirements_outside_specs
+  attributes:
+    label: Requirements Outside Solution Specs
+    description: Check any requirements that fall outside current solution specifications
+    options:
+      - label: Spatial resolution requirements
+      - label: Temporal resolution requirements  
+      - label: Geographic coverage requirements
+      - label: Data delivery mechanism requirements
+      - label: Other requirements (specify in notes)
+      ---
 
   - type: textarea
     id: barriers
