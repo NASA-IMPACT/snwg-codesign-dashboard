@@ -1,0 +1,163 @@
+name: 📊 Program Performance & Resource Analysis
+description: Track program-wide performance metrics, resource allocation, and strategic capacity management
+title: "📊 PROGRAM ANALYSIS: [Performance/Resource Focus]"
+labels: ["program-performance", "executive-dashboard", "resource-management"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Program Performance & Resource Analysis
+        Monitor program-wide performance, track resource utilization, and identify strategic opportunities for optimization across all solution projects.
+
+  - type: input
+    id: analysis_title
+    attributes:
+      label: Analysis Title
+      description: Brief title describing the performance or resource analysis focus
+      placeholder: "Q2 2025 Cross-Project Resource Utilization Analysis"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: analysis_type
+    attributes:
+      label: Analysis Type
+      description: Primary focus of this program-level analysis
+      options:
+        - Overall Program Performance Assessment
+        - Cross-Project Resource Utilization
+        - Strategic Capacity Planning
+        - Program Timeline Performance
+        - Cost Efficiency Analysis
+        - Stakeholder Satisfaction Trends
+        - Quality Metrics Across Projects
+        - Risk Management Effectiveness
+        - Partnership Performance Review
+    validations:
+      required: true
+
+  - type: dropdown
+    id: analysis_timeframe
+    attributes:
+      label: Analysis Timeframe
+      description: Time period covered by this analysis
+      options:
+        - Current Month
+        - Current Quarter
+        - Current Fiscal Year
+        - Cross-Cycle Comparison
+        - Real-time/Ongoing Monitoring
+        - Project Phase Analysis
+    validations:
+      required: true
+
+  - type: textarea
+    id: key_findings
+    attributes:
+      label: Key Findings
+      description: Primary results, trends, and observations from this analysis
+      placeholder: "Performance metrics, utilization rates, trend analysis, comparative results..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: performance_metrics
+    attributes:
+      label: Performance Metrics & Data
+      description: Specific quantitative and qualitative metrics analyzed
+      placeholder: "Timeline compliance rates, budget variance, stakeholder satisfaction scores, quality ratings..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: performance_assessment
+    attributes:
+      label: Overall Performance Assessment
+      description: How is program performance against targets and expectations?
+      options:
+        - Exceeding Expectations - Performance significantly above targets
+        - Meeting Expectations - Performance at or near target levels
+        - Below Expectations - Performance below targets but manageable
+        - Concerning - Performance significantly below expectations
+        - Critical - Performance requiring immediate strategic intervention
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_implications
+    attributes:
+      label: Strategic Implications
+      description: What do these findings mean for program strategy and resource allocation?
+      placeholder: "Impact on program goals, resource needs, strategic adjustments, risk implications..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected_program_areas
+    attributes:
+      label: Affected Program Areas
+      description: Which areas of the program are impacted by these findings?
+      options:
+        - label: Multiple Solution Projects
+        - label: Stakeholder Engagement Strategy
+        - label: Resource Allocation Decisions
+        - label: Timeline/Schedule Management
+        - label: Quality Assurance Processes
+        - label: Partnership Development
+        - label: Budget/Cost Management
+        - label: Risk Management Strategy
+
+  - type: textarea
+    id: strategic_recommendations
+    attributes:
+      label: Strategic Recommendations
+      description: Program-level actions recommended based on this analysis
+      placeholder: "Resource reallocation, process improvements, strategic partnerships, policy changes..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action_priority
+    attributes:
+      label: Action Priority Level
+      description: Urgency of implementing recommended strategic actions
+      options:
+        - Critical - Immediate strategic action required (within weeks)
+        - High - Action needed within current quarter
+        - Medium - Action planned for next planning cycle
+        - Low - Long-term strategic consideration
+        - Monitoring - Continue tracking without immediate action
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_indicators
+    attributes:
+      label: Success Indicators
+      description: How will successful implementation of recommendations be measured?
+      placeholder: "Performance improvements, efficiency gains, stakeholder satisfaction, cost savings..."
+    validations:
+      required: false
+
+  - type: input
+    id: next_review_date
+    attributes:
+      label: Next Review Date
+      description: When should this analysis be updated or reassessed?
+      placeholder: "YYYY-MM-DD or Next Quarter/Month"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: executive_reporting
+    attributes:
+      label: Executive Reporting Requirements
+      description: Where should these findings be communicated?
+      options:
+        - label: NASA HQ Program Leadership
+        - label: SNWG Principal Review
+        - label: Implementation Team Coordination
+        - label: Stakeholder Community Updates
+        - label: Budget/Resource Planning Sessions
+        - label: Cross-Agency Partner Briefings
