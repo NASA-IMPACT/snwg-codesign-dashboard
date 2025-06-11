@@ -1,0 +1,104 @@
+name: 🔗 Cross-Project Strategic Insight
+description: Document strategic patterns, trends, and insights spanning multiple solution projects
+title: "🔗 INSIGHT: [Strategic Pattern/Trend]"
+labels: ["cross-project-insight", "executive-dashboard", "strategic-learning"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Cross-Project Strategic Insights
+        Capture strategic patterns, trends, and insights that span multiple solution projects and inform executive decision-making and program optimization.
+
+  - type: input
+    id: insight_title
+    attributes:
+      label: Strategic Insight Title
+      description: Brief, descriptive title for the cross-project insight
+      placeholder: "Stakeholder Engagement Success Patterns Across Earth Science Solutions"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: insight_category
+    attributes:
+      label: Strategic Insight Category
+      description: Type of strategic insight for executive consideration
+      options:
+        - Strategic Best Practice Identification
+        - Program Risk Pattern Recognition
+        - Resource Optimization Opportunity
+        - Cross-Agency Partnership Insight
+        - Technology Integration Learning
+        - Stakeholder Engagement Effectiveness
+        - Process Innovation Opportunity
+        - Performance Trend Analysis
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_insight
+    attributes:
+      label: Strategic Insight Description
+      description: Comprehensive description of the strategic pattern or trend
+      placeholder: "What strategic pattern was observed, why it's significant for program direction, implications for executive decision-making..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence_base
+    attributes:
+      label: Supporting Evidence
+      description: Data, examples, or observations supporting this strategic insight
+      placeholder: "Cross-project data, stakeholder feedback trends, performance metrics, cost analysis..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: program_impact
+    attributes:
+      label: Program Impact Level
+      description: How significantly does this insight affect program strategy?
+      options:
+        - Transformational - Requires major program strategy revision
+        - High Impact - Important for program direction and resource allocation
+        - Moderate Impact - Useful for program optimization
+        - Informational - Valuable for future strategic planning
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: solution_project_scope
+    attributes:
+      label: Solution Project Scope
+      description: Which solution projects contributed to this insight?
+      options:
+        - label: Earth Science Data Solutions
+        - label: Climate/Weather Monitoring Solutions
+        - label: Disaster Response Solutions
+        - label: Research & Analysis Solutions
+        - label: Cross-Agency Partnership Solutions
+        - label: Technology Innovation Projects
+        - label: All Current Solution Projects
+
+  - type: textarea
+    id: strategic_recommendations
+    attributes:
+      label: Strategic Recommendations for Executive Action
+      description: What program-level actions should executives consider?
+      placeholder: "Strategic policy changes, resource reallocation, partnership development, process improvements..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: implementation_priority
+    attributes:
+      label: Implementation Priority for Executives
+      description: How urgently should executives act on this insight?
+      options:
+        - Immediate Executive Action Required
+        - Action Needed This Quarter
+        - Plan for Next Program Cycle
+        - Long-term Strategic Consideration
+    validations:
+      required: true
