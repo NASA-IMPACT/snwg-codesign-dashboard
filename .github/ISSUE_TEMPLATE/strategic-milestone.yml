@@ -1,0 +1,104 @@
+name: 🎯 Strategic Milestone
+description: Track program-wide achievements and critical strategic decision points
+title: "🎯 STRATEGIC MILESTONE: [Brief Description]"
+labels: ["strategic-milestone", "executive-dashboard", "program-wide"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Strategic Milestone Tracking
+        Track major program achievements, critical decision points, and strategic initiatives that affect multiple solution projects or the overall program direction.
+
+  - type: input
+    id: milestone_title
+    attributes:
+      label: Strategic Milestone Title
+      description: Brief, strategic milestone name
+      placeholder: "OMB Budget Approval for FY26 Solution Portfolio"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: milestone_type
+    attributes:
+      label: Strategic Milestone Type
+      description: Category of program-wide strategic milestone
+      options:
+        - Program Decision Gate (Major funding/authorization)
+        - Cross-Agency Partnership Agreement
+        - Strategic Policy Implementation
+        - Multi-Project Technology Integration
+        - Program Portfolio Restructuring
+        - Executive Leadership Change/Appointment
+        - Strategic Review/Assessment Completion
+        - Regulatory/Compliance Achievement
+    validations:
+      required: true
+
+  - type: input
+    id: target_completion
+    attributes:
+      label: Target Completion Date
+      description: Expected milestone completion date
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: strategic_impact
+    attributes:
+      label: Strategic Impact Level
+      description: How critical is this milestone to overall program success?
+      options:
+        - Mission Critical - Program success depends on this milestone
+        - High Strategic Value - Significant impact on program goals
+        - Moderate Impact - Important for program optimization
+        - Supporting - Contributes to program success but not critical
+    validations:
+      required: true
+
+  - type: textarea
+    id: milestone_description
+    attributes:
+      label: Strategic Milestone Description
+      description: What constitutes completion of this strategic milestone?
+      placeholder: "Clear definition of strategic success, impact on program direction..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected_areas
+    attributes:
+      label: Program Areas Affected
+      description: Which areas of the program are impacted by this milestone?
+      options:
+        - label: Multiple Solution Projects (3+ projects)
+        - label: Cross-Agency Partnership Strategy
+        - label: Program Budget/Resource Allocation
+        - label: Stakeholder Community Engagement
+        - label: Technology/Platform Integration
+        - label: Policy/Regulatory Compliance
+        - label: Executive Leadership/Governance
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Strategic Success Criteria
+      description: How will successful completion be measured at the program level?
+      placeholder: "Quantitative metrics, executive approval, stakeholder acceptance..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: executive_visibility
+    attributes:
+      label: Executive Visibility Level
+      description: What level of executive attention does this milestone require?
+      options:
+        - NASA HQ Director Level - Requires senior executive oversight
+        - Program Manager Level - Standard executive attention
+        - Project Manager Level - Routine executive awareness
+        - Team Level - Informational for executives
+    validations:
+      required: true
