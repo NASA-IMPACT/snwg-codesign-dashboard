@@ -1,5 +1,5 @@
 name: 📢 Stakeholder Feedback Collection
-description: Systematically collect and track stakeholder feedback
+description: Systematically collect and track stakeholder feedback from a workshop, townhall, large meeting, etc.
 title: '[FEEDBACK] [Project Name] - [Feedback Topic]'
 labels: ['feedback', 'stakeholder-input', 'agency-response']
 assignees:
